@@ -51,11 +51,11 @@
         paper on multi-objective deep reinforcement learning for edge-cloud server selection.
       links:
         - label: Learning materials
-          url: https://github.com/hazel260802/BKCS
+          url: https://github.com/huyentrang-le/BKCS
         - label: Paper source code
           url: https://github.com/TranLabScholars/mec_multi-objective_drl
         - label: Reference implementation
-          url: https://github.com/hazel260802/mec_morl_multipolicy
+          url: https://github.com/huyentrang-le/mec_morl_multipolicy
 
 - section: Engineering degree in Computer Science, HUST (PFIEV)
   term: 2020–2024
@@ -70,21 +70,21 @@
       term: 2023
       links:
         - label: Repository
-          url: https://github.com/hazel260802/Mobile-Programming
+          url: https://github.com/huyentrang-le/Mobile-Programming
         - label: Words app
-          url: https://github.com/hazel260802/android-basics-kotlin-words-app
+          url: https://github.com/huyentrang-le/android-basics-kotlin-words-app
     - course: SDN with ONOS
       title: Open Network Operating System labs
       term: 2023
       links:
         - label: Repository
-          url: https://github.com/hazel260802/onos
+          url: https://github.com/huyentrang-le/onos
     - course: IT4611 Distributed Systems and Applications
       title: Course notes and project
       term: 2023
       links:
         - label: Repository
-          url: https://github.com/hazel260802/HPT
+          url: https://github.com/huyentrang-le/HPT
     - course: Introduction to Artificial Intelligence
       title: "Mini project: chess game with an AI opponent"
       term: 2023
@@ -96,57 +96,57 @@
       term: 2023
       links:
         - label: CN_WEB
-          url: https://github.com/hazel260802/CN_WEB
+          url: https://github.com/huyentrang-le/CN_WEB
         - label: Administration
-          url: https://github.com/hazel260802/ADMINISTRATION
+          url: https://github.com/huyentrang-le/ADMINISTRATION
         - label: Dashboard
-          url: https://github.com/hazel260802/Dashboard
+          url: https://github.com/huyentrang-le/Dashboard
     - course: IT3120 System Analysis and Design
       title: Course materials
       term: 2023
       links:
         - label: Repository
-          url: https://github.com/hazel260802/it3120
+          url: https://github.com/huyentrang-le/it3120
     - course: IT3103 Object-Oriented Programming
       title: Lectures and practice in Java
       term: 2022–2023
       links:
         - label: OOP
-          url: https://github.com/hazel260802/OOP
+          url: https://github.com/huyentrang-le/OOP
         - label: OOP practice
-          url: https://github.com/hazel260802/OOP_HUST
+          url: https://github.com/huyentrang-le/OOP_HUST
     - course: Introduction to Software Engineering
       title: Java coursework and a population management application
       term: 2022
       links:
         - label: Repository
-          url: https://github.com/hazel260802/SE-Intro
+          url: https://github.com/huyentrang-le/SE-Intro
     - course: Computer Networks
       title: Theory notes
       term: 2022
       links:
         - label: Repository
-          url: https://github.com/hazel260802/Computer-Networks
+          url: https://github.com/huyentrang-le/Computer-Networks
     - course: Operating Systems
       title: Lecture notes
       term: 2022
       links:
         - label: Repository
-          url: https://github.com/hazel260802/Operating-Systems
+          url: https://github.com/huyentrang-le/Operating-Systems
     - course: Data Structures and Algorithms
       title: Exercises in C
       term: 2022
       links:
         - label: Repository
-          url: https://github.com/hazel260802/CTDL-GT
+          url: https://github.com/huyentrang-le/CTDL-GT
     - course: C Programming (Basic)
       title: Practice exercises and project
       term: 2021
       links:
         - label: Practice
-          url: https://github.com/hazel260802/CBASIC
+          url: https://github.com/huyentrang-le/CBASIC
         - label: Project
-          url: https://github.com/hazel260802/ProjectCBasic
+          url: https://github.com/huyentrang-le/ProjectCBasic
 
 - section: Self-learning
   items:
@@ -155,13 +155,13 @@
       term: 2026
       links:
         - label: Repository
-          url: https://github.com/hazel260802/dApp-learning
+          url: https://github.com/huyentrang-le/dApp-learning
     - course: Udemy
       title: "NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)"
       term: 2022
       links:
         - label: Course work
-          url: https://github.com/hazel260802/NodeJS
+          url: https://github.com/huyentrang-le/NodeJS
     - course: freeCodeCamp certification
       title: JavaScript Algorithms and Data Structures
       links:
@@ -177,4 +177,4 @@
       term: 2021
       links:
         - label: Repository
-          url: https://github.com/hazel260802/boilerplate-npm
+          url: https://github.com/huyentrang-le/boilerplate-npm

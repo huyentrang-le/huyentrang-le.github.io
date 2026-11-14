@@ -34,14 +34,14 @@ jobs:
         uses: actions/configure-pages@v6
 
       # The site is served at the root of the user site, so baseurl is empty.
-      # This requires the repo to be named hazel260802.github.io.
+      # This requires the repo to be named huyentrang-le.github.io.
       - name: Build site
         run: |
           printf 'url: "%s"\nbaseurl: "%s"\n' "$PAGES_ORIGIN" "" > _config_pages.yml
           bundle exec jekyll build --config _config.yml,_config_pages.yml
         env:
           JEKYLL_ENV: production
-          PAGES_ORIGIN: https://hazel260802.github.io
+          PAGES_ORIGIN: https://huyentrang-le.github.io
 
       # Safari and older browsers cannot use the SVG favicon; rasterize it so
       # favicon.ico and the iOS home-screen icon match the generated SVG.

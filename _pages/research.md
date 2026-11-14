@@ -82,7 +82,7 @@ permalink: /research/
 <div class="pub-actions">
 <a href="https://ieeexplore.ieee.org/abstract/document/10630895/" target="_blank" rel="noopener" class="btn-pill btn-link">Article</a>
 <a href="https://github.com/TranLabScholars/mec_multi-objective_drl" target="_blank" rel="noopener" class="btn-pill btn-code">Code</a>
-<a href="https://github.com/hazel260802/BKCS" target="_blank" rel="noopener" class="btn-pill btn-git">Learning materials</a>
+<a href="https://github.com/huyentrang-le/BKCS" target="_blank" rel="noopener" class="btn-pill btn-git">Learning materials</a>
 </div>
 </div>
 </div>
