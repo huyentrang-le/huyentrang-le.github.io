@@ -8,13 +8,12 @@ I am a PhD candidate at Cnam and ECE Engineering School (LyRIDS / CEDRIC laborat
 
 ## What's on the site
 
-- **Home**: short bio, research interests, selected publications and latest news
-- **About**: education and awards
-- **Publications**: papers and posters, with BibTeX for each entry
-- **Talks**: conference talks and poster presentations
-- **Research**: overview of my research projects
-- **Projects**: software and engineering projects
-- **Learning Materials**: my [network calculus notes](https://cnam-ece.github.io/learning-materials/blog/why-deterministic-guarantees) and course materials from my Master's at Paris-Saclay and my engineering degree at HUST
+- **Home**: short introduction, research interests, awards and scholarships, latest news and selected publications
+- **Research**: PhD thesis, research topics, publications (with BibTeX) and talks & posters, on one page
+- **Projects**: grouped into hackathons & challenges, research prototypes, and events & community
+- **Teaching**: networking courses, to be added
+- **Learning Materials**: lab notes (by research project), course materials (by education level) and certificates
+- **Contact**: email, profile links and campus maps
 
 ## Editing the content
 
@@ -22,7 +21,12 @@ I am a PhD candidate at Cnam and ECE Engineering School (LyRIDS / CEDRIC laborat
 |------|-------|
 | Name, links, menu | `_config.yml` |
 | Publications | `assets/ref.bib` |
-| News, awards, talks, projects, education, learning materials | `_data/*.yml` |
+| Education and PhD thesis | `_data/pi.yml` |
+| News, awards, talks | `_data/news.yml`, `_data/awards.yml`, `_data/talks.yml` |
+| Projects and their categories | `_data/projects.yml`, `_data/project_categories.yml` |
+| Teaching | `_data/teaching.yml` |
+| Learning materials | `_data/learning.yml` |
+| Campus locations on the map | `_data/locations.yml` |
 | Page text | `_pages/*.md` |
 | Photo | `images/` |
 
