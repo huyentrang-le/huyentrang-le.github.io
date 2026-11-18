@@ -177,6 +177,12 @@
               url: https://github.com/huyentrang-le/CBASIC
             - label: Project
               url: https://github.com/huyentrang-le/ProjectCBasic
+- id: certificates
+  title: Certificates
+  icon: badge-check
+  tone: green
+  item_icon: badge-check
+  groups:
     - title: "Online courses"
       items:
         - course: Udemy
@@ -191,12 +197,6 @@
           links:
             - label: Repository
               url: https://github.com/huyentrang-le/boilerplate-npm
-- id: certificates
-  title: Certificates
-  icon: badge-check
-  tone: green
-  item_icon: badge-check
-  groups:
     - title: "freeCodeCamp"
       items:
         - course: freeCodeCamp certification
