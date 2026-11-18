@@ -90,3 +90,72 @@
 section[id], h2[id] {
   scroll-margin-top: 5rem;
 }
+
+.page-tabs .tab-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+// Projects page — category sections with a card grid
+.project-section {
+  margin: var(--space-8) 0 var(--space-10);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  --tone: var(--accent);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-top: 3px solid var(--tone);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-slow), transform var(--transition-slow);
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .project-title {
+    font-size: 1.0625rem;
+    margin: 0 0 var(--space-2);
+    &::after { display: none; }
+  }
+
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-3);
+
+    span { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .icon { color: var(--tone); }
+  }
+
+  .project-desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: none;
+  }
+
+  .project-authors {
+    font-size: 0.8125rem;
+    font-style: italic;
+    color: var(--text-muted);
+    max-width: none;
+  }
+}

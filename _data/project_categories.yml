@@ -1,0 +1,15 @@
+# Categories on the Projects page, in display order.
+# id matches `category` in projects.yml; icon is a name from _includes/icons.svg;
+# tone is one of blue, teal, green, amber, rose, violet.
+- id: hackathon
+  title: Hackathons & challenges
+  icon: trophy
+  tone: amber
+- id: research
+  title: Research prototypes
+  icon: code
+  tone: blue
+- id: event
+  title: Events & community
+  icon: users
+  tone: rose

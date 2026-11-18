@@ -49,8 +49,7 @@ analytics:
 nav_pages:
   - name: about
   - name: research
-  - name: software
-    label: Projects
+  - name: projects
   # - name: team
   - name: teaching
     label: Learning Materials
