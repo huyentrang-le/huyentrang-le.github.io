@@ -12,7 +12,7 @@ permalink: /team/
 
 <div class="section-card">
 <div class="pi-card">
-<img src="{{ site.photo | prepend: '/images/' | relative_url }}" class="pi-photo" alt="{{ site.name }}" width="160" height="160">
+<img src="{{ site.photo | prepend: '/images/' | relative_url }}?v={{ site.time | date: '%s' }}" class="pi-photo" alt="{{ site.name }}" width="160" height="160">
 <div>
 <h3 class="pi-name">{{ site.name }}</h3>
 <p style="font-style: italic; color: var(--text-secondary);">{{ site.title }}, {{ site.institution }}</p>

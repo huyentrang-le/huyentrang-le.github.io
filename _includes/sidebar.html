@@ -1,6 +1,6 @@
 <div class="profile-card">
 <a href="{{ '/contact/' | relative_url }}" aria-label="Contact">
-<img src="{{ site.photo | prepend: '/images/' | relative_url }}" class="profile-photo" alt="{{ site.name }}" width="140" height="140" fetchpriority="high">
+<img src="{{ site.photo | prepend: '/images/' | relative_url }}?v={{ site.time | date: '%s' }}" class="profile-photo" alt="{{ site.name }}" width="140" height="140" fetchpriority="high">
 </a>
 <p class="profile-name">{{ site.name }}</p>
 <p class="profile-title">{{ site.title }}</p>
