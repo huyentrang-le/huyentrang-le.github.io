@@ -19,12 +19,8 @@ permalink: /research/
 <div class="research-card">
 <div class="research-body">
 <h3 class="research-title">{{ topic.title }}</h3>
+{% if topic.keywords %}<div class="topic-keywords">{% for k in topic.keywords %}<span>{{ k }}</span>{% endfor %}</div>{% endif %}
 <p class="research-desc">{{ topic.description }}</p>
-{% if topic.links %}
-<div class="pub-actions">
-{% for link in topic.links %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="btn-pill btn-{{ link.style | default: 'link' }}">{{ link.label }}</a>{% endfor %}
-</div>
-{% endif %}
 </div>
 </div>
 {% endfor %}

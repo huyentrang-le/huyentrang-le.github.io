@@ -250,3 +250,21 @@ section[id], h2[id] {
     span { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.55; }
   }
 }
+
+// Keyword tags on research topic cards
+.topic-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: var(--space-3);
+
+  span {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.1rem 0.55rem;
+    border-radius: var(--radius-full);
+    color: var(--tone-teal);
+    background-color: color-mix(in srgb, var(--tone-teal) 11%, transparent);
+  }
+}

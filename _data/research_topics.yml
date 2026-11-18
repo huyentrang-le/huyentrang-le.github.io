@@ -1,63 +1,59 @@
 # Research topics, shown as cards on the Research page; the first three are
-# also listed on the home page.
-# Each entry needs: title, summary (one line, for the home page), description (HTML allowed)
-# Optional: links (list of {label, url, style}); style is a btn-pill variant
-#           such as link, pdf, poster, git, code, website, slides
+# also listed on the home page. Links to papers, code, slides and demos live
+# in the publication entries (assets/ref.bib), not here.
+# Each entry needs: title, keywords (list), summary (one line, for the home page),
+#                   description (a short paragraph)
 
-- title: "Certified Dynamic Reconfiguration of TSN Networks (PhD)"
+- title: "Certified Dynamic Reconfiguration of TSN Networks"
+  keywords: [Time-Sensitive Networking, Network calculus, Worst-case latency, Dynamic reconfiguration]
   summary: "Provable worst-case latency bounds that stay certified while TSN networks are reconfigured."
   description: >-
-    <a href="https://1.ieee802.org/tsn/" target="_blank" rel="noopener">Time-Sensitive Networking (TSN)</a> promises bounded latency, but measurements only show a lower bound on the worst-case delay. My PhD uses deterministic <a href="https://en.wikipedia.org/wiki/Network_calculus" target="_blank" rel="noopener">network calculus</a> to prove worst-case latency bounds and to keep them certified when the network is reconfigured at runtime. <a href="https://www.ece.fr/en/research-focuses-and-structuring" target="_blank" rel="noopener">LyRIDS</a> (ECE) and <a href="https://cedric.cnam.fr/" target="_blank" rel="noopener">CEDRIC</a> (Cnam).
-  links:
-    - {label: "Notes", url: "https://cnam-ece.github.io/learning-materials/blog/why-deterministic-guarantees", style: link}
-    - {label: "GitHub", url: "https://github.com/CNAM-ECE", style: git}
+    Time-Sensitive Networking (TSN) promises bounded latency, but measurements only show
+    a lower bound on the worst-case delay. My PhD uses deterministic network calculus to
+    prove worst-case latency bounds and to keep them certified when the network is
+    reconfigured at runtime.
 
 - title: "Secure Genomic Data Sharing with Zero-Knowledge Proofs"
+  keywords: [Blockchain, Zero-knowledge proofs, Genomic data, Privacy]
   summary: "Zero-knowledge proofs for multi-party genomic data sharing on blockchain."
   description: >-
-    Blockchain-based platforms for sharing genomic data among multiple parties while protecting participants' identities. This work analyzes <a href="https://en.wikipedia.org/wiki/Zero-knowledge_proof" target="_blank" rel="noopener">zero-knowledge proof</a> (ZKP) based approaches to multi-party genomic data sharing and builds trust-based sharing and privacy-preserving aggregated biomedical analysis on top of them. COSMO team, <a href="https://www.ibisc.univ-evry.fr/" target="_blank" rel="noopener">IBISC</a>, with Prof. Nazim Agoulmine and Dr. Adnan Imeri. Published at ADVANCE 2026 and presented as a poster at <a href="https://womencourage.acm.org/2026/" target="_blank" rel="noopener">ACM womENcourage 2026</a>.
-  links:
-    - {label: "Article", url: "https://univ-evry.hal.science/hal-05645365/", style: link}
-    - {label: "PDF", url: "https://univ-evry.hal.science/hal-05645365/document", style: pdf}
-    - {label: "Poster", url: "https://womencourage.acm.org/2026/index.php/poster-session/", style: poster}
-    - {label: "GitHub", url: "https://github.com/TTGenProject", style: git}
+    Blockchain-based platforms for sharing genomic data among multiple parties while
+    protecting participants' identities. This work analyzes zero-knowledge proof (ZKP)
+    based approaches to multi-party genomic data sharing and builds trust-based sharing
+    and privacy-preserving aggregated biomedical analysis on top of them.
 
 - title: "Selective Disclosure of Electronic Health Records"
+  keywords: [Sui blockchain, Zero-knowledge smart contracts, Health records, Access control]
   summary: "Traceable sharing of health records on the Sui blockchain with zero-knowledge contracts."
   description: >-
-    Secure, traceable transmission of <a href="https://en.wikipedia.org/wiki/Electronic_health_record" target="_blank" rel="noopener">electronic health records</a> on the <a href="https://sui.io/" target="_blank" rel="noopener">Sui</a> blockchain, with contextual access control and privacy protection through zero-knowledge smart contracts (ZKContract). The resulting prototype guarantees confidentiality, integrity and traceability of medical data and won the <a href="https://genopole.agorize.com/web/en/challenges/618/teams/2643/participation" target="_blank" rel="noopener">Shaker Genopole Challenge</a>.
-  links:
-    - {label: "Shaker Genopole", url: "https://genopole.agorize.com/web/en/challenges/618/teams/2643/participation", style: link}
+    Secure, traceable transmission of electronic health records on the Sui blockchain,
+    with contextual access control and privacy protection through zero-knowledge smart
+    contracts, guaranteeing the confidentiality, integrity and traceability of medical data.
 
 - title: "SDN-based Medical IoT Infrastructure"
+  keywords: [Software-defined networking, Medical IoT, OpenFlow, Mininet-WiFi]
   summary: "Secure collection of medical IoT data over software-defined hospital networks."
   description: >-
-    A secure infrastructure for collecting EHR data from medical IoT devices, with intelligent orchestration for autonomous, adaptive and user-centred <a href="https://en.wikipedia.org/wiki/Software-defined_networking" target="_blank" rel="noopener">Software-Defined Networks (SDN)</a>. It is evaluated in <a href="https://mininet-wifi.github.io/" target="_blank" rel="noopener">Mininet-WiFi</a> over <a href="https://en.wikipedia.org/wiki/OpenFlow" target="_blank" rel="noopener">OpenFlow</a> (<a href="https://genopole.agorize.com/en/challenges/d4gen-hackathon-2026" target="_blank" rel="noopener">D4Gen Hackathon 2026</a> project at <a href="https://www.ibisc.univ-evry.fr/" target="_blank" rel="noopener">IBISC</a>), where language agents orchestrate the devices through MCP interfaces.
-  links:
-    - {label: "Demo", url: "https://llm-intent-orchestration.vercel.app", style: website}
-    - {label: "Code", url: "https://github.com/D4GenHackathon/llm-intent-orchestration", style: code}
-    - {label: "Slides", url: "https://docs.google.com/presentation/d/17n0wptI4n4wjyPATJ44HPGJ8dE6MdHPh/edit?usp=sharing", style: slides}
+    A secure infrastructure for collecting health data from medical IoT devices, with
+    intelligent orchestration for autonomous, adaptive and user-centred software-defined
+    networks, evaluated in Mininet-WiFi over OpenFlow.
 
 - title: "Language Agents for IoT Orchestration"
+  keywords: [Language agents, IoT, Orchestration]
   summary: "LLMThings: language agents that orchestrate IoT systems."
   description: >-
-    <a href="https://llmthings.github.io/demo/" target="_blank" rel="noopener">LLMThings</a> is an experimentation platform for orchestrating IoT systems with language agents, built with Anaïs Sadoudi and Dr. Massinissa Hamidi. It received the <a href="https://www.ibisc.univ-evry.fr/anais-sadoudi-et-huyen-trang-le-recoivent-le-best-presentation-award-a-la-jdse-2026-english-version-below/" target="_blank" rel="noopener">Best Presentation Award</a> at <a href="https://jdse2026.github.io/program/" target="_blank" rel="noopener">JDSE 2026</a>.
-  links:
-    - {label: "Demo", url: "https://llmthings.github.io/demo/", style: website}
-    - {label: "Slides", url: "https://jdse2026.github.io/slides/Oral_pres/13_SADOUDI_LLMThings.pdf", style: slides}
+    LLMThings, an experimentation platform for orchestrating IoT systems with language agents.
 
 - title: "Location Privacy in Multimodal Transportation"
+  keywords: [Location privacy, Mobility trajectories, Context awareness]
   summary: "Context-aware protection of mobility trajectories across transport modes."
   description: >-
-    An adaptive privacy-preserving system for multimodal mobility trajectories that adjusts the level of protection to the user's context and mode of transport. Carried out during a 3-month research internship at <a href="https://www.up.pt/feup/en/" target="_blank" rel="noopener">FEUP, Universidade do Porto</a>, funded by <a href="https://erasmus-plus.ec.europa.eu/" target="_blank" rel="noopener">Erasmus+</a> and the <a href="https://www.universite-paris-saclay.fr/admission/bourses-et-aides-financieres/bourses-de-stage-linternational-idex" target="_blank" rel="noopener">IDEX Paris-Saclay</a> international internship scholarship, with Prof. Mariana Cunha and Prof. João P. Vilela. Presented as a poster at <a href="https://kdradjat.github.io/jdse-2025/" target="_blank" rel="noopener">JDSE 2025</a>.
-  links:
-    - {label: "Poster", url: "https://kdradjat.github.io/jdse-2025/posters/3_Context-Aware_Location_Privacy-Preserving.pdf", style: poster}
+    An adaptive privacy-preserving system for multimodal mobility trajectories that adjusts
+    the level of protection to the user's context and mode of transport.
 
 - title: "Deep Reinforcement Learning for Edge-Cloud Systems"
+  keywords: [Deep reinforcement learning, Multi-objective optimisation, Edge-cloud computing]
   summary: "Multi-objective deep reinforcement learning for edge-cloud server selection."
   description: >-
-    A multi-objective <a href="https://en.wikipedia.org/wiki/Deep_reinforcement_learning" target="_blank" rel="noopener">deep reinforcement learning</a> algorithm for selecting edge-cloud servers. It improves network routing performance by more than 60% over traditional algorithms. Engineering thesis (graded 4/4) at the BKCS lab, HUST, with Prof. Tran Hai-Anh; published at IEEE Cloud Summit 2024.
-  links:
-    - {label: "Article", url: "https://ieeexplore.ieee.org/abstract/document/10630895/", style: link}
-    - {label: "Code", url: "https://github.com/TranLabScholars/mec_multi-objective_drl", style: code}
-    - {label: "Learning materials", url: "https://github.com/huyentrang-le/BKCS", style: git}
+    A multi-objective deep reinforcement learning algorithm for selecting edge-cloud servers,
+    improving network routing performance by more than 60% over traditional algorithms.
