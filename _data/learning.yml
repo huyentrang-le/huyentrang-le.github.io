@@ -5,7 +5,8 @@
 #           item_icon (icon shown next to each item's name), layout (list for a plain list; tiles by default), groups
 # Group: title, items. Optional: term, place
 # Item: title. Optional: course (bold label), icon (overrides the category's item icon), term,
-#       description (HTML allowed), links (list of {label, url}), labs (list of {name, tools}) for sub-entries
+#       description (HTML allowed), links (list of {label, url}), labs (list of {name, tools}) for sub-entries,
+#       style (line: one full-width row above the tiles)
 
 - id: lab-notes
   title: Lab notes
@@ -66,6 +67,7 @@
       term: 2025–2026
       items:
         - course: Course materials
+          style: line
           title: Notes, labs and project materials from the Master's programme
           links:
             - label: Google Drive folder
@@ -91,6 +93,7 @@
       term: 2020–2024
       items:
         - course: Course materials
+          style: line
           title: Notes, exercises and project materials from the engineering programme
           links:
             - label: Google Drive folder

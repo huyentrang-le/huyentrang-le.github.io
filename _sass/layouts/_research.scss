@@ -268,3 +268,21 @@ section[id], h2[id] {
     background-color: color-mix(in srgb, var(--tone-teal) 11%, transparent);
   }
 }
+
+// One-line entry (e.g. a programme's shared course folder) above the tiles
+.learn-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin-top: var(--space-4);
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+
+  strong { color: var(--text-primary); }
+
+  .learn-item-icon {
+    color: var(--tone, var(--accent));
+    font-size: 1.05rem;
+  }
+}

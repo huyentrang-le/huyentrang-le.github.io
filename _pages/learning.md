@@ -34,8 +34,18 @@ permalink: /learning/
 {% endfor %}
 </ul>
 {% else %}
+{% assign line_items = group.items | where: "style", "line" %}
+{% for item in line_items %}
+{% assign item_icon = item.icon | default: cat.item_icon | default: "book-open" %}
+<div class="learn-line">
+{% include icon.html name=item_icon class="learn-item-icon" %}
+<span><strong>{{ item.course }}</strong>{% if item.title %}: {{ item.title }}{% endif %}</span>
+{% for link in item.links %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="btn-pill btn-link">{{ link.label }}</a>{% endfor %}
+</div>
+{% endfor %}
 <div class="learn-items">
 {% for item in group.items %}
+{% if item.style == "line" %}{% continue %}{% endif %}
 {% assign item_icon = item.icon | default: cat.item_icon | default: "book-open" %}
 <div class="learn-item{% if item.labs %} wide{% endif %}">
 <p class="learn-item-head">{% include icon.html name=item_icon class="learn-item-icon" %}<span><strong>{{ item.course | default: item.title }}</strong>{% if item.term %} <span class="learn-term">{{ item.term }}</span>{% endif %}</span></p>
