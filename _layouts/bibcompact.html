@@ -8,7 +8,7 @@
 {% endcomment %}
 {% assign venue = entry.booktitle | default: entry.journal %}
 <div class="pub-compact">
-<div class="pub-compact-title">{% if entry.url %}<a href="{{ entry.url }}" target="_blank" rel="noopener">{{ entry.title }}</a>{% else %}<a href="{{ '/publications' | relative_url }}">{{ entry.title }}</a>{% endif %}</div>
+<div class="pub-compact-title">{% if entry.url %}<a href="{{ entry.url }}" target="_blank" rel="noopener">{{ entry.title }}</a>{% else %}<a href="{{ '/research/#publications' | relative_url }}">{{ entry.title }}</a>{% endif %}</div>
 {% if venue %}
 <div class="pub-compact-meta">{{ venue }}, {{ entry.year }}</div>
 {% if entry.note %}<span class="pub-compact-note">{{ entry.note }}</span>{% endif %}

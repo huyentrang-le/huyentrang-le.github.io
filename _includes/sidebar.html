@@ -1,5 +1,5 @@
 <div class="profile-card">
-<a href="{{ '/about' | relative_url }}">
+<a href="{{ '/contact/' | relative_url }}" aria-label="Contact">
 <img src="{{ site.photo | prepend: '/images/' | relative_url }}" class="profile-photo" alt="{{ site.name }}" width="140" height="140" fetchpriority="high">
 </a>
 <p class="profile-name">{{ site.name }}</p>
@@ -44,6 +44,6 @@
 <div class="pub-compact-list">
 {{ selected }}
 </div>
-<p style="margin-top: var(--space-4);"><a href="{{ '/publications' | relative_url }}">All publications &rarr;</a></p>
+<p style="margin-top: var(--space-4);"><a href="{{ '/research/#publications' | relative_url }}">All publications &rarr;</a></p>
 </div>
 {% endif %}

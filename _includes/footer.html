@@ -9,7 +9,7 @@
       </p>
     </div>
     <div>
-      <h2 class="footer-heading">Contact</h2>
+      <h2 class="footer-heading"><a href="{{ '/contact/' | relative_url }}">Contact</a></h2>
       <p>
         <a href="mailto:{{ site.email }}">{% include icon.html name="envelope" %} {{ site.email }}</a><br>
         {% if site.links.github and site.links.github != "" %}<a href="{{ site.links.github }}">{% include icon.html name="github" %} GitHub</a><br>{% endif %}
