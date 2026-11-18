@@ -2,7 +2,7 @@
 # Basic info (name, photo, links) now lives in _config.yml.
 # Education entries may contain HTML links. In educationshort (sidebar), hyphens are rendered as en dashes.
 - education:
-    - '(2026–2029, expected) PhD in Computer Networks, <a href="https://www.cnam.fr/" target="_blank" rel="noopener">Conservatoire national des arts et métiers (Cnam)</a> and <a href="https://www.ece.fr/" target="_blank" rel="noopener">ECE Engineering School</a>, doctoral school SMI. Thesis: certified dynamic reconfiguration of TSN networks, <a href="https://www.ece.fr/en/research-focuses-and-structuring" target="_blank" rel="noopener">LyRIDS</a> (ECE) and <a href="https://cedric.cnam.fr/" target="_blank" rel="noopener">CEDRIC</a> (Cnam)'
+    - '(2029) PhD in Computer Networks, <a href="https://www.cnam.fr/" target="_blank" rel="noopener">Conservatoire national des arts et métiers (Cnam)</a> and <a href="https://www.ece.fr/" target="_blank" rel="noopener">ECE Engineering School</a>, doctoral school SMI. Thesis: certified dynamic reconfiguration of TSN networks, <a href="https://www.ece.fr/en/research-focuses-and-structuring" target="_blank" rel="noopener">LyRIDS</a> (ECE) and <a href="https://cedric.cnam.fr/" target="_blank" rel="noopener">CEDRIC</a> (Cnam)'
     - '(2026) M2 Computer Networks, Network Systems track (CNS SR), <a href="https://www.univ-evry.fr/" target="_blank" rel="noopener">Université d’Évry Paris-Saclay</a>. Average 15/20, with honours'
     - '(2024) Engineering Degree in Computer Science, <a href="https://soict.hust.edu.vn/en/?p=18332" target="_blank" rel="noopener">PFIEV Elite Engineering Programme</a>, <a href="https://hust.edu.vn/" target="_blank" rel="noopener">Hanoi University of Science and Technology</a>. GPA 3.5/4, ranked 5/40, with highest honours'
   # PhD thesis, shown in its own card on the About page.
@@ -15,7 +15,7 @@
     labs: "<a href='https://www.ece.fr/en/research-focuses-and-structuring' target='_blank' rel='noopener'>LyRIDS</a> (ECE) and <a href='https://cedric.cnam.fr/' target='_blank' rel='noopener'>CEDRIC</a> (Cnam)"
     doctoral_school: "École doctorale SMI (ED 432, Sciences des métiers de l'ingénieur)"
     start: "November 2026"
-    end: "2029 (expected)"
+    end: "2029"
     supervisors: []
     summary: >-
       Time-Sensitive Networking (TSN) promises bounded end-to-end latency for
@@ -26,6 +26,6 @@
     notes: https://cnam-ece.github.io/learning-materials/blog/why-deterministic-guarantees
     code: https://github.com/CNAM-ECE
   educationshort:
-    - "(2026–2029 exp.) PhD Networks, Cnam & ECE"
+    - "(2029) PhD Networks, Cnam & ECE"
     - "(2026) M2 Networks, Univ. Évry Paris Saclay"
     - "(2024) Eng. Computer Science, HUST"
