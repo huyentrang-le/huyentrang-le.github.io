@@ -186,29 +186,29 @@
   tone: green
   item_icon: badge-check
   groups:
-    - title: "Online courses"
+    - title: "freeCodeCamp"
       items:
-        - course: Udemy
-          title: "NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)"
-          term: 2022
+        - course: JavaScript Algorithms and Data Structures
+          title: Certification
           links:
-            - label: Course work
-              url: https://github.com/huyentrang-le/NodeJS
-        - course: freeCodeCamp
-          title: Back-end development and APIs, npm boilerplate
+            - label: Certificate
+              url: https://www.freecodecamp.org/certification/fcc0c601d87-4215-4421-b07a-122c19c47fbe/javascript-algorithms-and-data-structures
+        - course: Responsive Web Design
+          title: Certification
+          links:
+            - label: Certificate
+              url: https://www.freecodecamp.org/certification/fcc0c601d87-4215-4421-b07a-122c19c47fbe/responsive-web-design
+        - course: Back-end Development and APIs
+          title: Course project, npm boilerplate
           term: 2021
           links:
             - label: Repository
               url: https://github.com/huyentrang-le/boilerplate-npm
-    - title: "freeCodeCamp"
+    - title: "Udemy"
       items:
-        - course: freeCodeCamp certification
-          title: JavaScript Algorithms and Data Structures
+        - course: "NodeJS - The Complete Guide"
+          title: MVC, REST APIs, GraphQL, Deno
+          term: 2022
           links:
-            - label: Certificate
-              url: https://www.freecodecamp.org/certification/fcc0c601d87-4215-4421-b07a-122c19c47fbe/javascript-algorithms-and-data-structures
-        - course: freeCodeCamp certification
-          title: Responsive Web Design
-          links:
-            - label: Certificate
-              url: https://www.freecodecamp.org/certification/fcc0c601d87-4215-4421-b07a-122c19c47fbe/responsive-web-design
+            - label: Course work
+              url: https://github.com/huyentrang-le/NodeJS
