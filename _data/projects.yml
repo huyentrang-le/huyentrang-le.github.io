@@ -1,7 +1,7 @@
 # Projects, shown on the Projects page grouped by category (see
 # _data/project_categories.yml), in the order listed within each category.
 # Each entry needs: name, category, description
-# Optional: year, role, authors, website, repo, docs, paper, program, slides, event
+# Optional: year, role, authors, website, repo, docs, paper, program, slides, event, facebook
 # Home page: set featured: true, plus short (a shorter name) and summary (one line).
 
 - name: Zero-knowledge smart contracts for healthcare SLAs (Shaker Genopole)
@@ -108,7 +108,7 @@
   event: https://hust.edu.vn/vi/news/khoa-hoc-cong-nghe-dmst/bach-khoa-ha-noi-khuyen-khich-sinh-vien-su-dung-cong-nghe-moi-654914.html
   description: >-
     Programming competition co-organised with the <a href="https://www.auf.org/" target="_blank" rel="noopener">AUF</a>
-    at HUST.
+    at <a href="https://hust.edu.vn/" target="_blank" rel="noopener">HUST</a>.
 
 - name: "Chat'Innov AUF 2023: hackathon for French-speaking students"
   category: event
@@ -122,11 +122,13 @@
 - name: HUST Francophone Club
   category: event
   role: Head of the extracurricular activities committee
+  facebook: https://www.facebook.com/clbphapbachkhoa/
   description: >-
-    Led the club's extracurricular activities and organised francophone career orientation events.
+    Led the extracurricular activities of the French-speaking club of <a href="https://hust.edu.vn/" target="_blank" rel="noopener">HUST</a> and organised
+    francophone career orientation events.
 
 - name: StartupCity ambassador
   category: event
-  website: https://www.facebook.com/photo/?fbid=2640232599461776&set=a.371740252977700
+  facebook: https://www.facebook.com/photo/?fbid=2640232599461776&set=a.371740252977700
   description: >-
     Student ambassador for the StartupCity entrepreneurship programme.

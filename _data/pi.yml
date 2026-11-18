@@ -1,10 +1,10 @@
 # Optional: detailed education and bio for the About page.
 # Basic info (name, photo, links) now lives in _config.yml.
-# Note: hyphens are rendered as en dashes, so names here avoid them.
+# Education entries may contain HTML links. In educationshort (sidebar), hyphens are rendered as en dashes.
 - education:
-    - "(2026–2029, expected) PhD in Computer Networks, Conservatoire national des arts et métiers (Cnam) and ECE Engineering School, doctoral school SMI. Thesis: certified dynamic reconfiguration of TSN networks, LyRIDS (ECE) and CEDRIC (Cnam)"
-    - "(2026) M2 Computer Networks, Network Systems track (CNS SR), Université d'Évry Paris Saclay. Average 15/20, with honours"
-    - "(2024) Engineering Degree in Computer Science, PFIEV Elite Engineering Programme, Hanoi University of Science and Technology. GPA 3.5/4, ranked 5/40, with highest honours"
+    - '(2026–2029, expected) PhD in Computer Networks, <a href="https://www.cnam.fr/" target="_blank" rel="noopener">Conservatoire national des arts et métiers (Cnam)</a> and <a href="https://www.ece.fr/" target="_blank" rel="noopener">ECE Engineering School</a>, doctoral school SMI. Thesis: certified dynamic reconfiguration of TSN networks, <a href="https://www.ece.fr/en/research-focuses-and-structuring" target="_blank" rel="noopener">LyRIDS</a> (ECE) and <a href="https://cedric.cnam.fr/" target="_blank" rel="noopener">CEDRIC</a> (Cnam)'
+    - '(2026) M2 Computer Networks, Network Systems track (CNS SR), <a href="https://www.univ-evry.fr/" target="_blank" rel="noopener">Université d’Évry Paris-Saclay</a>. Average 15/20, with honours'
+    - '(2024) Engineering Degree in Computer Science, <a href="https://soict.hust.edu.vn/en/?p=18332" target="_blank" rel="noopener">PFIEV Elite Engineering Programme</a>, <a href="https://hust.edu.vn/" target="_blank" rel="noopener">Hanoi University of Science and Technology</a>. GPA 3.5/4, ranked 5/40, with highest honours'
   # PhD thesis, shown in its own card on the About page.
   # Fill in supervisors as a list, e.g. ["Prof. A", "Dr. B"]; leave empty to hide.
   phd:
