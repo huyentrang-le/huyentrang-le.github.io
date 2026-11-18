@@ -25,7 +25,7 @@
     file     PDF in papers/          arxiv   arXiv identifier
     pdf      external PDF URL (used when no local file)
     doi      DOI                     url     any web page
-    code, slides, video, poster, data, demo, event, scholar   URLs
+    code, slides, video, poster, data, demo, eventpage, scholar   URLs
   For backwards compatibility an arXiv id in the doi field of an
   @unpublished entry is still treated as an arXiv link.
 {% endcomment %}
@@ -55,7 +55,7 @@
     {% if entry.video %}<a href="{{ entry.video }}" target="_blank" rel="noopener" class="pub-btn tone-rose">{% include icon.html name="play" %}Video</a>{% endif %}
     {% if entry.data %}<a href="{{ entry.data }}" target="_blank" rel="noopener" class="pub-btn tone-teal">{% include icon.html name="database" %}Data</a>{% endif %}
     {% if entry.scholar %}<a href="{{ entry.scholar }}" target="_blank" rel="noopener" class="pub-btn tone-blue">{% include icon.html name="google-scholar" %}Scholar</a>{% endif %}
-    {% if entry.event %}<a href="{{ entry.event }}" target="_blank" rel="noopener" class="pub-btn tone-amber">{% include icon.html name="calendar" %}Event</a>{% endif %}
+    {% if entry.eventpage %}<a href="{{ entry.eventpage }}" target="_blank" rel="noopener" class="pub-btn tone-amber">{% include icon.html name="calendar" %}Event</a>{% endif %}
     <button class="pub-btn tone-neutral" data-toggle-target="bib-{{ entry.key }}">{% include icon.html name="braces" %}BibTeX</button>
     {% if entry.abstract %}<button class="pub-btn tone-neutral" data-toggle-target="abs-{{ entry.key }}">{% include icon.html name="text" %}Abstract</button>{% endif %}
   </div>
