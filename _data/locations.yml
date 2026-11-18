@@ -1,0 +1,18 @@
+# Places shown with a map on the Contact page.
+# Each entry needs: name, address, lat, lon. Optional: lab, url, tone
+# Coordinates from OpenStreetMap (Nominatim).
+- name: ECE Engineering School, Paris campus
+  lab: LyRIDS laboratory
+  address: 10 rue Sextius Michel, 75015 Paris, France
+  url: https://www.ece.fr/campus/campus-de-paris/
+  lat: 48.8510273
+  lon: 2.2885712
+  tone: blue
+
+- name: Conservatoire national des arts et métiers (Cnam)
+  lab: CEDRIC laboratory
+  address: 292 rue Saint-Martin, 75003 Paris, France
+  url: https://cedric.cnam.fr/
+  lat: 48.866783
+  lon: 2.3554167
+  tone: rose

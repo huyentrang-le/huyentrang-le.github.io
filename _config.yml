@@ -54,6 +54,7 @@ nav_pages:
   - name: teaching
   - name: learning
     label: Learning Materials
+  - name: contact
   # - name: blog
 
 # ============================================================
