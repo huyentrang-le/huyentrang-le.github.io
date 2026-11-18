@@ -13,3 +13,26 @@
   margin: 0 auto;
   padding: var(--space-8) var(--container-padding) 0;
 }
+
+// Balanced card grids (see "Balanced Card Rows" in assets/js/site.js).
+// Without JavaScript they stay ordinary CSS grids; with it they switch to
+// flex rows whose card widths are set per row.
+.balanced-grid {
+  --max-cols: 3;
+
+  @media (max-width: 992px) { --max-cols: 2; }
+  @media (max-width: 600px) { --max-cols: 1; }
+
+  &.max-2 {
+    --max-cols: 2;
+    @media (max-width: 768px) { --max-cols: 1; }
+  }
+
+  &.is-balanced {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    > * { min-width: 0; }
+  }
+}

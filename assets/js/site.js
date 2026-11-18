@@ -124,6 +124,60 @@
     wrapper.appendChild(btn);
   });
 
+  // ----- Balanced Card Rows -----
+  // Grids marked .balanced-grid spread their cards over rows of near-equal
+  // size (7 cards at 3 per row -> 3, 2, 2) and stretch each row to the full
+  // width, so the last row never holds a lone small card. The maximum per
+  // row comes from the CSS variable --max-cols (changed by media queries).
+  // Children with .wide always take a full row of their own.
+
+  function balanceGrid(grid) {
+    var max = parseInt(getComputedStyle(grid).getPropertyValue('--max-cols'), 10) || 3;
+    var gap = getComputedStyle(grid).columnGap;
+    if (!gap || gap === 'normal') gap = '0px';
+    var items = Array.prototype.slice.call(grid.children);
+    var segment = [];
+
+    function place(seg) {
+      var n = seg.length;
+      if (!n) return;
+      var rows = Math.ceil(n / max);
+      var base = Math.floor(n / rows);
+      var extra = n % rows;          // the first `extra` rows get one more card
+      var i = 0;
+      for (var r = 0; r < rows; r++) {
+        var k = base + (r < extra ? 1 : 0);
+        for (var j = 0; j < k; j++, i++) {
+          seg[i].style.flex = '0 0 calc((100% - ' + (k - 1) + ' * ' + gap + ') / ' + k + ')';
+        }
+      }
+    }
+
+    items.forEach(function (el) {
+      if (el.classList.contains('wide')) {
+        place(segment);
+        segment = [];
+        el.style.flex = '0 0 100%';
+      } else {
+        segment.push(el);
+      }
+    });
+    place(segment);
+    grid.classList.add('is-balanced');
+  }
+
+  var balancedGrids = document.querySelectorAll('.balanced-grid');
+  if (balancedGrids.length) {
+    var balanceAll = function () { balancedGrids.forEach(balanceGrid); };
+    balanceAll();
+    var balanceQueued = false;
+    window.addEventListener('resize', function () {
+      if (balanceQueued) return;
+      balanceQueued = true;
+      requestAnimationFrame(function () { balanceQueued = false; balanceAll(); });
+    });
+  }
+
   // ----- Back to Top Button -----
 
   var topBtn = document.createElement('button');

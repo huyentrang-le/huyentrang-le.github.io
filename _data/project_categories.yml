@@ -1,15 +1,19 @@
 # Categories on the Projects page, in display order.
 # id matches `category` in projects.yml; icon is a name from _includes/icons.svg;
-# tone is one of blue, teal, green, amber, rose, violet.
+# tone is one of blue, teal, green, amber, rose, violet; per_row is the most cards
+# in one row (2 for long descriptions, 3 for short ones).
 - id: hackathon
   title: Hackathons & challenges
   icon: trophy
   tone: amber
+  per_row: 2
 - id: research
   title: Research prototypes
   icon: code
   tone: blue
+  per_row: 2
 - id: event
   title: Events & community
   icon: users
   tone: rose
+  per_row: 3

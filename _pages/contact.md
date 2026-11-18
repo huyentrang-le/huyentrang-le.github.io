@@ -11,7 +11,7 @@ permalink: /contact/
 <div class="section-card contact-card">
 <h2 class="sec-title"><span class="icon-badge tone-rose">{% include icon.html name="envelope" %}</span>Get in touch</h2>
 <p>The best way to reach me is by email. I am happy to talk about TSN, network calculus, privacy-preserving systems and collaborations.</p>
-<ul class="contact-links">
+<ul class="contact-links balanced-grid">
 {% if site.email %}<li><a href="mailto:{{ site.email }}" class="brand-email">{% include icon.html name="envelope" %}<span>{{ site.email }}</span></a></li>{% endif %}
 {% if site.links.google_scholar and site.links.google_scholar != "" %}<li><a href="{{ site.links.google_scholar }}" target="_blank" rel="noopener" class="brand-scholar">{% include icon.html name="google-scholar" %}<span>Google Scholar</span></a></li>{% endif %}
 {% if site.links.github and site.links.github != "" %}<li><a href="{{ site.links.github }}" target="_blank" rel="noopener" class="brand-github">{% include icon.html name="github" %}<span>GitHub</span></a></li>{% endif %}

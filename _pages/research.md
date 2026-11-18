@@ -13,7 +13,7 @@ permalink: /research/
 
 <h2 id="topics" class="sec-title"><span class="icon-badge tone-teal">{% include icon.html name="lightbulb" %}</span>Research topics</h2>
 
-<div class="research-grid" markdown="0">
+<div class="research-grid balanced-grid" markdown="0">
 {% for topic in site.data.research_topics %}
 <div class="research-card">
 <div class="research-body">

@@ -7,7 +7,7 @@ permalink: /teaching/
 # Teaching
 
 {% if site.data.teaching and site.data.teaching.size > 0 %}
-<div class="project-grid" markdown="0">
+<div class="project-grid balanced-grid max-2" markdown="0">
 {% for c in site.data.teaching %}
 <article class="project-card tone-green">
 <h3 class="project-title">{{ c.course }}</h3>

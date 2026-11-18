@@ -19,7 +19,7 @@ permalink: /projects/
 {% if items.size > 0 %}
 <section id="{{ cat.id }}" class="project-section" markdown="0">
 <h2 class="sec-title"><span class="icon-badge tone-{{ cat.tone }}">{% include icon.html name=cat.icon %}</span>{{ cat.title }}</h2>
-<div class="project-grid">
+<div class="project-grid balanced-grid{% if cat.per_row == 2 %} max-2{% endif %}">
 {% for project in items %}
 <article class="project-card tone-{{ cat.tone }}">
 <h3 class="project-title">{{ project.name }}</h3>

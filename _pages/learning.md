@@ -43,7 +43,7 @@ permalink: /learning/
 {% for link in item.links %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="btn-pill btn-link">{{ link.label }}</a>{% endfor %}
 </div>
 {% endfor %}
-<div class="learn-items">
+<div class="learn-items balanced-grid">
 {% for item in group.items %}
 {% if item.style == "line" %}{% continue %}{% endif %}
 {% assign item_icon = item.icon | default: cat.item_icon | default: "book-open" %}
@@ -52,7 +52,7 @@ permalink: /learning/
 {% if item.course and item.title %}<p class="learn-item-title">{{ item.title }}</p>{% endif %}
 {% if item.description %}<p class="learn-item-desc">{{ item.description }}</p>{% endif %}
 {% if item.labs %}
-<ul class="learn-labs">
+<ul class="learn-labs balanced-grid">
 {% for lab in item.labs %}<li><strong>{{ lab.name }}</strong><span>{{ lab.tools }}</span></li>{% endfor %}
 </ul>
 {% endif %}
