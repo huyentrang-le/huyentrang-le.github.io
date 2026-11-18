@@ -97,3 +97,11 @@
   border-left-color: var(--accent);
   // default styling
 }
+
+// Keyword rows fill the full line: each chip grows to share the leftover
+// space, so every row (including the last) ends flush with the text column.
+.chip-container .chip,
+.topic-keywords > span {
+  flex: 1 1 auto;
+  text-align: center;
+}
