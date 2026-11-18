@@ -81,3 +81,38 @@
     background-color: color-mix(in srgb, currentColor 12%, transparent);
   }
 }
+
+// Publication link buttons — icon + label, tinted with a tone so each kind
+// of link has its own color in both light and dark mode
+.tone-neutral { --tone: var(--text-secondary); }
+
+.pub-links {
+  gap: var(--space-2);
+}
+
+.pub-btn {
+  --tone: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.7rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--tone);
+  background-color: color-mix(in srgb, var(--tone) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tone) 28%, transparent);
+  border-radius: var(--radius-full);
+  background-image: none !important;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+
+  .icon { font-size: 0.85rem; vertical-align: 0; }
+
+  &:hover {
+    color: var(--tone);
+    background-color: color-mix(in srgb, var(--tone) 18%, transparent);
+    border-color: color-mix(in srgb, var(--tone) 55%, transparent);
+  }
+}
