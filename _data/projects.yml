@@ -2,8 +2,12 @@
 # _data/project_categories.yml), in the order listed within each category.
 # Each entry needs: name, category, description
 # Optional: year, role, authors, website, repo, docs, paper, program, slides, event
+# Home page: set featured: true, plus short (a shorter name) and summary (one line).
 
 - name: Zero-knowledge smart contracts for healthcare SLAs (Shaker Genopole)
+  featured: true
+  short: Shaker Genopole Challenge (winner)
+  summary: Zero-knowledge smart contracts for traceable health records on Sui.
   category: hackathon
   year: 2026
   authors: H.-T. Le, H.-H. Vuong; supervised by A. Imeri and N. Agoulmine
@@ -38,6 +42,9 @@
     <a href="https://www.ibisc.univ-evry.fr/" target="_blank" rel="noopener">IBISC</a>.
 
 - name: "SafeProof: privacy-preserving harassment reporting (ACM womENcourage 2026 Hackathon)"
+  featured: true
+  short: SafeProof (ACM womENcourage 2026 Hackathon)
+  summary: Privacy-preserving harassment reporting with zero-knowledge proofs.
   category: hackathon
   year: 2026
   authors: >-
@@ -57,6 +64,9 @@
     Part of the <a href="https://github.com/TTGenProject" target="_blank" rel="noopener">TTGenProject</a> organisation.
 
 - name: "LLMThings: Platform for Language Agents-Based Orchestration of IoT Systems"
+  featured: true
+  short: LLMThings
+  summary: Language agents orchestrating IoT systems; Best Presentation Award at JDSE 2026.
   category: research
   year: 2026
   authors: A. Sadoudi, H.-T. Le, M. Hamidi
@@ -80,6 +90,9 @@
 # ---------- Events & community ----------
 
 - name: President, HUST Finance and Technology Club (BK Fintech)
+  featured: true
+  short: BK Fintech club, HUST
+  summary: President; more than 10 workshops on blockchain and crypto-finance.
   category: event
   role: President
   website: https://fintech.hust.edu.vn/get-involved/club
