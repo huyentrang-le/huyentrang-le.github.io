@@ -39,7 +39,7 @@ bundle install
 bundle exec jekyll serve   # http://localhost:4000
 ```
 
-Pushing to the `source` branch builds the site and deploys it with GitHub Actions.
+Pushing to the `main` branch builds the site and deploys it with GitHub Actions.
 
 ## Credits
 

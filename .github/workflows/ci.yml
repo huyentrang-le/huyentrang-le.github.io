@@ -1,7 +1,7 @@
 name: CI
 
 # Builds the site and checks internal links on every pull request.
-# Deployment happens separately in deploy.yml on push to `source`.
+# Deployment happens separately in deploy.yml on push to `main`.
 
 on:
   pull_request:
