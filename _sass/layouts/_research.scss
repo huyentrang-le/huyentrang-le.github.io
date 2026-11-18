@@ -180,3 +180,73 @@ section[id], h2[id] {
     .icon { color: var(--tone, var(--accent)); }
   }
 }
+
+// Learning items — compact tiles with the icon next to the course name
+.learn-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.learn-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background-color: var(--bg-primary);
+
+  &.wide { grid-column: 1 / -1; }
+
+  p { max-width: none; margin-bottom: var(--space-2); }
+
+  .learn-item-head {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    color: var(--text-primary);
+  }
+
+  .learn-item-icon {
+    color: var(--tone, var(--accent));
+    font-size: 1.05rem;
+    margin-top: 0.1em;
+  }
+
+  .learn-term {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .learn-item-title,
+  .learn-item-desc {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .pub-actions { margin-top: var(--space-2); }
+}
+
+.learn-labs {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2) 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-2) var(--space-4);
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: var(--space-2) var(--space-3);
+    border-left: 2px solid var(--tone, var(--accent));
+    max-width: none;
+
+    strong { font-size: 0.8125rem; color: var(--text-primary); }
+    span { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.55; }
+  }
+}
