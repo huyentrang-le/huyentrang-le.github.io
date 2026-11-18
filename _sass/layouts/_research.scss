@@ -55,3 +55,38 @@
     line-height: 1.7;
   }
 }
+
+// In-page jump links at the top of merged pages (Research, Learning)
+.page-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 var(--space-6);
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.375rem 0.875rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    background-image: none !important;
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+
+    .icon { color: var(--tone, var(--accent)); }
+
+    &:hover {
+      border-color: var(--accent);
+      color: var(--text-primary);
+    }
+  }
+}
+
+// Offset in-page anchors below the sticky navbar
+section[id], h2[id] {
+  scroll-margin-top: 5rem;
+}

@@ -1,21 +1,6 @@
 ---
-title: "Publications"
-layout: page
+layout: redirect
 permalink: /publications/
+redirect_to: /research/#publications
+sitemap: false
 ---
-
-# Publications
-
-<p class="text-muted">Also on <a href="{{ site.links.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a>.</p>
-
-<input type="text" class="pub-search" id="pubSearch" placeholder="Filter by title, author, or year...">
-
-<div class="section-card" id="pubList">
-<h2>In Preparation</h2>
-
-{% bibliography --query @unpublished %}
-
-<h2>Conference, Workshop and Poster Papers</h2>
-
-{% bibliography --query @inproceedings %}
-</div>
