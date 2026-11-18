@@ -113,10 +113,9 @@ section[id], h2[id] {
 }
 
 .project-card {
-  --tone: var(--accent);
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-top: 3px solid var(--tone);
+  border-top: 3px solid var(--tone, var(--accent));
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   box-shadow: var(--shadow-sm);
@@ -142,7 +141,7 @@ section[id], h2[id] {
     margin-bottom: var(--space-3);
 
     span { display: inline-flex; align-items: center; gap: 0.35rem; }
-    .icon { color: var(--tone); }
+    .icon { color: var(--tone, var(--accent)); }
   }
 
   .project-desc {
@@ -162,8 +161,7 @@ section[id], h2[id] {
 
 // Learning Materials — one card per group, colored by category
 .learn-group {
-  --tone: var(--accent);
-  border-left: 3px solid var(--tone);
+  border-left: 3px solid var(--tone, var(--accent));
   padding: var(--space-6);
 
   .learn-group-title {
@@ -179,6 +177,6 @@ section[id], h2[id] {
     color: var(--text-muted);
 
     span { display: inline-flex; align-items: center; gap: 0.35rem; }
-    .icon { color: var(--tone); }
+    .icon { color: var(--tone, var(--accent)); }
   }
 }

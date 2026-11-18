@@ -44,15 +44,14 @@
 
 // Rounded square holding a colored icon, used next to section titles
 .icon-badge {
-  --tone: var(--accent);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 2rem;
   height: 2rem;
   border-radius: var(--radius-md);
-  color: var(--tone);
-  background-color: color-mix(in srgb, var(--tone) 13%, transparent);
+  color: var(--tone, var(--accent));
+  background-color: color-mix(in srgb, var(--tone, var(--accent)) 13%, transparent);
   font-size: 1.05rem;
   flex-shrink: 0;
 
