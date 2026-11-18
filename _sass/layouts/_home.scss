@@ -159,3 +159,30 @@
     color: var(--accent);
   }
 }
+
+// Awards list on the home page, with the rest behind a <details>
+.award-list {
+  padding-left: 1.1rem;
+  margin-bottom: var(--space-2);
+
+  li {
+    max-width: none;
+    padding: var(--space-1) 0;
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+  }
+  li::marker { color: var(--tone-amber); }
+}
+
+.more-list {
+  margin-bottom: var(--space-6);
+
+  > summary {
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent);
+    width: fit-content;
+  }
+  &[open] > summary { margin-bottom: var(--space-2); }
+}
