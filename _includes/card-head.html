@@ -1,0 +1,9 @@
+{% comment %}
+  Header row for a home-page preview card: colored icon + title, and a
+  "View more" link to the full page.
+  Params: title, icon, tone, url, more (link text, default "View more")
+{% endcomment %}
+<div class="card-head">
+<h2 class="sec-title"><span class="icon-badge tone-{{ include.tone | default: 'teal' }}">{% include icon.html name=include.icon %}</span>{{ include.title }}</h2>
+{% if include.url %}<a class="view-more" href="{{ include.url | relative_url }}">{{ include.more | default: "View more" }} &rarr;</a>{% endif %}
+</div>

@@ -16,16 +16,17 @@
 {% if site.links.linkedin and site.links.linkedin != "" %}<a href="{{ site.links.linkedin }}" class="icon-link brand-linkedin" title="LinkedIn" aria-label="LinkedIn">{% include icon.html name="linkedin" %}</a>{% endif %}
 </div>
 {% if site.data.pi[0].educationshort %}
-<ul style="text-align: left; margin-top: var(--space-4); list-style: none; padding-left: 0;">
+<ul class="profile-education">
 {% for education in site.data.pi[0].educationshort %}
-<li style="font-size: 0.875rem; color: var(--text-secondary); padding: var(--space-1) 0;">{{ education | replace: "-","&#8211;" }}</li>
+<li>{{ education | replace: "-","&#8211;" }}</li>
 {% endfor %}
 </ul>
 {% endif %}
+<a class="view-more" href="{{ '/about/' | relative_url }}">More about me &rarr;</a>
 </div>
 
-<div class="section-card" style="margin-top: var(--space-6);">
-<h2 class="sec-title" style="margin-top: 0; font-size: 1.125rem;"><span class="icon-badge tone-rose">{% include icon.html name="newspaper" %}</span>News</h2>
+<div class="section-card home-card">
+{% include card-head.html title="News" icon="newspaper" tone="rose" url="/allnews.html" more="All news" %}
 <div class="news-timeline">
 {% for article in site.data.news limit:3 %}
 <div class="news-item">
@@ -34,16 +35,40 @@
 </div>
 {% endfor %}
 </div>
-<p style="margin-top: var(--space-4);"><a href="{{ '/allnews.html' | relative_url }}">See all news &rarr;</a></p>
 </div>
 
-{% capture selected %}{% bibliography --query @*[selected=true] --template bibcompact %}{% endcapture %}
-{% if selected contains "pub-compact" %}
-<div class="section-card" style="margin-top: var(--space-6);">
-<h2 class="sec-title" style="margin-top: 0; font-size: 1.125rem;"><span class="icon-badge tone-blue">{% include icon.html name="book-open" %}</span>Selected publications</h2>
-<div class="pub-compact-list">
-{{ selected }}
+{% if site.data.talks.size > 0 %}
+<div class="section-card home-card">
+{% include card-head.html title="Talks &amp; posters" icon="presentation" tone="blue" url="/research/#talks" %}
+<ul class="home-list compact">
+{% for talk in site.data.talks limit:3 %}
+<li><a href="{{ '/research/#talks' | relative_url }}" class="home-list-title">{{ talk.title }}</a><span class="home-list-meta">{{ talk.event | split: " (" | first }}, {{ talk.year }}</span></li>
+{% endfor %}
+</ul>
 </div>
-<p style="margin-top: var(--space-4);"><a href="{{ '/research/#publications' | relative_url }}">All publications &rarr;</a></p>
+{% endif %}
+
+<div class="section-card home-card">
+{% include card-head.html title="Teaching" icon="graduation-cap" tone="green" url="/teaching/" %}
+{% if site.data.teaching and site.data.teaching.size > 0 %}
+<ul class="home-list compact">
+{% for c in site.data.teaching limit:3 %}
+<li><span class="home-list-title">{{ c.course }}</span><span class="home-list-meta">{{ c.institution }}{% if c.term %}, {{ c.term }}{% endif %}</span></li>
+{% endfor %}
+</ul>
+{% else %}
+<p class="home-card-note">Network courses coming soon.</p>
+{% endif %}
+</div>
+
+{% if site.data.locations %}
+<div class="section-card home-card">
+{% include card-head.html title="Contact" icon="map-pin" tone="violet" url="/contact/" more="Maps" %}
+<ul class="home-list compact">
+{% if site.email %}<li><a href="mailto:{{ site.email }}" class="home-list-title">{{ site.email }}</a></li>{% endif %}
+{% for loc in site.data.locations %}
+<li><span class="home-list-title">{{ loc.lab | default: loc.name }}</span><span class="home-list-meta">{{ loc.address | remove: ", France" }}</span></li>
+{% endfor %}
+</ul>
 </div>
 {% endif %}

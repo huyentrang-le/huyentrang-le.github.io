@@ -174,15 +174,109 @@
   li::marker { color: var(--tone-amber); }
 }
 
-.more-list {
+// Home preview cards — same header on every card: icon + title, "View more" on the right
+.home-card {
+  padding: var(--space-6);
+  margin-top: 0;
   margin-bottom: var(--space-6);
+}
 
-  > summary {
-    cursor: pointer;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--accent);
-    width: fit-content;
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+
+  h2.sec-title {
+    font-size: 1.125rem;
+    margin: 0;
   }
-  &[open] > summary { margin-bottom: var(--space-2); }
+}
+
+.view-more {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--accent);
+  background-image: none !important;
+
+  &:hover { color: var(--accent-hover); }
+}
+
+.home-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-color);
+    max-width: none;
+
+    &:first-child { padding-top: 0; }
+    &:last-child { border-bottom: none; padding-bottom: 0; }
+  }
+
+  .home-list-title {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--space-2);
+  }
+  a.home-list-title:hover { color: var(--accent); }
+
+  .home-list-icon {
+    color: var(--tone, var(--accent));
+    flex-shrink: 0;
+    position: relative;
+    top: 0.1em;
+  }
+
+  .home-list-meta {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  &.compact {
+    .home-list-title { font-size: 0.875rem; }
+    .home-list-meta { font-size: 0.75rem; }
+  }
+}
+
+.home-card-note {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.home-card .award-list { margin-bottom: 0; }
+.home-card .pub-compact-list li:first-child { padding-top: 0; }
+
+// Education list and link at the bottom of the profile card
+.profile-card {
+  .profile-education {
+    text-align: left;
+    margin: var(--space-4) 0 var(--space-3);
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      padding: var(--space-1) 0;
+      max-width: none;
+    }
+  }
+}
+
+.home-grid > div:last-child .profile-card {
+  margin-bottom: var(--space-6);
 }

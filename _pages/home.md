@@ -20,29 +20,56 @@ My thesis uses deterministic [network calculus](https://en.wikipedia.org/wiki/Ne
 
 Before my PhD, I completed an M2 in Computer Networks at [Université d'Évry Paris-Saclay](https://www.univ-evry.fr/) and an engineering degree in Computer Science at [HUST](https://hust.edu.vn/), Hanoi.
 I have worked on blockchain and zero-knowledge proofs for health and genomic data at [IBISC](https://www.ibisc.univ-evry.fr/), location privacy at the [Universidade do Porto](https://www.up.pt/feup/en/), and deep reinforcement learning for edge-cloud systems at the [BKCS lab](https://bkcs.hust.edu.vn/).
-More on the [research]({{ '/research/' | relative_url }}) and [projects]({{ '/projects/' | relative_url }}) pages.
 
-<div class="callout callout-success" markdown="0">
-<div class="callout-title">{% include icon.html name="notebook" class="callout-icon" %} Network calculus notes</div>
-<p>A learning series on network calculus applied to TSN, from worst-case bounds to dynamic reconfiguration. Start with <a href="https://cnam-ece.github.io/learning-materials/blog/why-deterministic-guarantees" target="_blank" rel="noopener">Why deterministic guarantees?</a></p>
+{% capture selected %}{% bibliography --query @*[selected=true] --template bibcompact %}{% endcapture %}
+{% if selected contains "pub-compact" %}
+<div class="section-card home-card" markdown="0">
+{% include card-head.html title="Selected publications" icon="book-open" tone="blue" url="/research/#publications" %}
+<div class="pub-compact-list">
+{{ selected }}
+</div>
+</div>
+{% endif %}
+
+<div class="section-card home-card" markdown="0">
+{% include card-head.html title="Research" icon="lightbulb" tone="teal" url="/research/#topics" %}
+<ul class="home-list">
+{% for topic in site.data.research_topics limit:3 %}
+<li><a href="{{ '/research/#topics' | relative_url }}" class="home-list-title">{{ topic.title }}</a><span class="home-list-meta">{{ topic.summary }}</span></li>
+{% endfor %}
+</ul>
+</div>
+
+{% assign featured = site.data.projects | where: "featured", true %}
+<div class="section-card home-card" markdown="0">
+{% include card-head.html title="Projects" icon="code" tone="violet" url="/projects/" %}
+<ul class="home-list">
+{% for project in featured %}
+{% assign cat = site.data.project_categories | where: "id", project.category | first %}
+<li class="tone-{{ cat.tone }}"><a href="{{ '/projects/#' | append: project.category | relative_url }}" class="home-list-title">{% include icon.html name=cat.icon class="home-list-icon" %}{{ project.short | default: project.name }}</a><span class="home-list-meta">{{ project.summary }}</span></li>
+{% endfor %}
+</ul>
 </div>
 
 {% if site.data.awards %}
-<h2 class="sec-title"><span class="icon-badge tone-amber">{% include icon.html name="trophy" %}</span>Awards &amp; scholarships</h2>
-
-<ul class="award-list" markdown="0">
+<div class="section-card home-card" markdown="0">
+{% include card-head.html title="Awards &amp; scholarships" icon="trophy" tone="amber" url="/about/" %}
+<ul class="award-list">
 {% for award in site.data.awards limit:4 %}
 <li>{% if award.url %}<a href="{{ award.url }}" target="_blank" rel="noopener">{{ award.name }}</a>{% else %}{{ award.name }}{% endif %}</li>
 {% endfor %}
 </ul>
-{% if site.data.awards.size > 4 %}
-<details class="more-list" markdown="0">
-<summary>Show all {{ site.data.awards.size }}</summary>
-<ul class="award-list">
-{% for award in site.data.awards offset:4 %}
-<li>{% if award.url %}<a href="{{ award.url }}" target="_blank" rel="noopener">{{ award.name }}</a>{% else %}{{ award.name }}{% endif %}</li>
+</div>
+{% endif %}
+
+{% if site.data.learning %}
+<div class="section-card home-card" markdown="0">
+{% include card-head.html title="Learning materials" icon="notebook" tone="teal" url="/learning/" %}
+<ul class="home-list">
+{% for cat in site.data.learning %}
+{% assign n = 0 %}{% for g in cat.groups %}{% assign n = n | plus: g.items.size %}{% endfor %}
+<li class="tone-{{ cat.tone }}"><a href="{{ '/learning/#' | append: cat.id | relative_url }}" class="home-list-title">{% include icon.html name=cat.icon class="home-list-icon" %}{{ cat.title }}</a><span class="home-list-meta">{{ n }} items in {{ cat.groups.size }} group{% if cat.groups.size != 1 %}s{% endif %}</span></li>
 {% endfor %}
 </ul>
-</details>
-{% endif %}
+</div>
 {% endif %}
