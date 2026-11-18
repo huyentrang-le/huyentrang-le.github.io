@@ -4,10 +4,10 @@
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 var(--space-6);
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 
@@ -28,7 +28,7 @@
   padding: 0;
   margin: var(--space-4) 0 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: var(--space-2);
 
   a {
@@ -70,7 +70,7 @@
 
 .map-frame {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-color);
