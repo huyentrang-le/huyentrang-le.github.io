@@ -19,6 +19,21 @@ permalink: /learning/
 <div class="section-card learn-group tone-{{ cat.tone }}">
 <h3 class="learn-group-title">{{ group.title }}</h3>
 {% if group.place or group.term %}<p class="project-meta">{% if group.place %}<span>{% include icon.html name="building" %} {{ group.place }}</span>{% endif %}{% if group.term %}<span>{% include icon.html name="calendar" %} {{ group.term }}</span>{% endif %}</p>{% endif %}
+{% if cat.layout == "list" %}
+<ul class="teaching-list">
+{% for item in group.items %}
+<li>
+{% if item.course %}<strong>{{ item.course }}</strong>{% if item.title %}: {% endif %}{% endif %}{{ item.title }}{% if item.term %} <span class="text-muted">({{ item.term }})</span>{% endif %}
+{% if item.description %}<br><span class="text-muted">{{ item.description }}</span>{% endif %}
+{% if item.links %}
+<div class="pub-actions" style="margin-top: var(--space-2);">
+{% for link in item.links %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="btn-pill btn-link">{{ link.label }}</a>{% endfor %}
+</div>
+{% endif %}
+</li>
+{% endfor %}
+</ul>
+{% else %}
 <div class="learn-items">
 {% for item in group.items %}
 {% assign item_icon = item.icon | default: cat.item_icon | default: "book-open" %}
@@ -39,6 +54,7 @@ permalink: /learning/
 </div>
 {% endfor %}
 </div>
+{% endif %}
 </div>
 {% endfor %}
 </section>

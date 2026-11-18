@@ -2,7 +2,7 @@
 # Three categories (lab notes, course materials, certificates); each holds groups,
 # and each group holds items.
 # Category: id, title, icon (from _includes/icons.svg), tone (blue, teal, green, amber, rose, violet),
-#           item_icon (icon shown next to each item's name), groups
+#           item_icon (icon shown next to each item's name), layout (list for a plain list; tiles by default), groups
 # Group: title, items. Optional: term, place
 # Item: title. Optional: course (bold label), icon (overrides the category's item icon), term,
 #       description (HTML allowed), links (list of {label, url}), labs (list of {name, tools}) for sub-entries
@@ -12,6 +12,7 @@
   icon: notebook
   tone: teal
   item_icon: notebook
+  layout: list
   groups:
     - title: "Certified reconfiguration of TSN networks (PhD)"
       place: "Cnam & ECE"
