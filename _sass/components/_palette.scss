@@ -115,3 +115,36 @@
     border-color: color-mix(in srgb, var(--tone, var(--accent)) 55%, transparent);
   }
 }
+
+// Facebook brand color, and the small "where does this link go" icon
+:root { --brand-facebook: #1877f2; }
+[data-bs-theme="dark"] { --brand-facebook: #6aa7f8; }
+
+.link-src {
+  display: inline-flex;
+  margin-left: 0.4em;
+  font-size: 0.8em;
+  vertical-align: -0.05em;
+  color: var(--text-muted);
+
+  &.brand-facebook { color: var(--brand-facebook); }
+  &.brand-linkedin { color: var(--brand-linkedin); }
+  &.brand-github   { color: var(--brand-mono); }
+  &.brand-scholar  { color: var(--brand-scholar); }
+  &.brand-web      { color: var(--tone-teal); }
+}
+
+.pub-btn.brand-facebook { --tone: var(--brand-facebook); }
+
+// Buttons in one row take the palette in order, so neighbours always differ.
+// The tones are lightened in dark mode (see the top of this file).
+.pub-actions > .pub-btn,
+.learn-line > .pub-btn {
+  &:nth-of-type(6n + 1) { --tone: var(--tone-blue); }
+  &:nth-of-type(6n + 2) { --tone: var(--tone-violet); }
+  &:nth-of-type(6n + 3) { --tone: var(--tone-teal); }
+  &:nth-of-type(6n + 4) { --tone: var(--tone-amber); }
+  &:nth-of-type(6n + 5) { --tone: var(--tone-rose); }
+  &:nth-of-type(6n + 6) { --tone: var(--tone-green); }
+  &.tone-neutral { --tone: var(--text-secondary); }
+}

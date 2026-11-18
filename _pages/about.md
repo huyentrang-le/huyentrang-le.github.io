@@ -13,16 +13,16 @@ permalink: /about/
 <h2 class="pi-name">{{ site.name }}</h2>
 <p style="font-style: italic; color: var(--text-secondary);">{{ site.title }}, {{ site.institution }}</p>
 <div class="pi-links">
-{% if site.email %}<a href="mailto:{{ site.email }}" class="icon-link" title="Email" aria-label="Email">{% include icon.html name="envelope" %}</a>{% endif %}
-{% if site.links.cv and site.links.cv != "" %}<a href="{{ site.links.cv | prepend: '/' | relative_url }}" class="icon-link" title="CV" aria-label="CV">{% include icon.html name="cv" %}</a>{% endif %}
-{% if site.links.google_scholar and site.links.google_scholar != "" %}<a href="{{ site.links.google_scholar }}" class="icon-link" title="Google Scholar" aria-label="Google Scholar">{% include icon.html name="google-scholar" %}</a>{% endif %}
-{% if site.links.github and site.links.github != "" %}<a href="{{ site.links.github }}" class="icon-link" title="GitHub" aria-label="GitHub">{% include icon.html name="github" %}</a>{% endif %}
-{% if site.links.researchgate and site.links.researchgate != "" %}<a href="{{ site.links.researchgate }}" class="icon-link" title="ResearchGate" aria-label="ResearchGate">{% include icon.html name="researchgate" %}</a>{% endif %}
+{% if site.email %}<a href="mailto:{{ site.email }}" class="icon-link brand-email" title="Email" aria-label="Email">{% include icon.html name="envelope" %}</a>{% endif %}
+{% if site.links.cv and site.links.cv != "" %}<a href="{{ site.links.cv | prepend: '/' | relative_url }}" class="icon-link brand-cv" title="CV" aria-label="CV">{% include icon.html name="cv" %}</a>{% endif %}
+{% if site.links.google_scholar and site.links.google_scholar != "" %}<a href="{{ site.links.google_scholar }}" class="icon-link brand-scholar" title="Google Scholar" aria-label="Google Scholar">{% include icon.html name="google-scholar" %}</a>{% endif %}
+{% if site.links.github and site.links.github != "" %}<a href="{{ site.links.github }}" class="icon-link brand-github" title="GitHub" aria-label="GitHub">{% include icon.html name="github" %}</a>{% endif %}
+{% if site.links.researchgate and site.links.researchgate != "" %}<a href="{{ site.links.researchgate }}" class="icon-link brand-scholar" title="ResearchGate" aria-label="ResearchGate">{% include icon.html name="researchgate" %}</a>{% endif %}
 </div>
 {% if site.data.pi[0].education %}
 <ul style="margin-top: var(--space-4);">
 {% for education in site.data.pi[0].education %}
-<li>{{ education | replace: "-","&#8211;" }}</li>
+<li>{{ education }}</li>
 {% endfor %}
 </ul>
 {% endif %}
@@ -47,8 +47,8 @@ permalink: /about/
 </ul>
 {% if phd.notes or phd.code %}
 <div class="pub-actions">
-{% if phd.notes %}<a href="{{ phd.notes }}" target="_blank" rel="noopener" class="btn-pill btn-link">Learning notes</a>{% endif %}
-{% if phd.code %}<a href="{{ phd.code }}" target="_blank" rel="noopener" class="btn-pill btn-git">GitHub</a>{% endif %}
+{% if phd.notes %}{% include link-btn.html url=phd.notes label="Learning notes" %}{% endif %}
+{% if phd.code %}{% include link-btn.html url=phd.code label="GitHub" %}{% endif %}
 </div>
 {% endif %}
 </div>
@@ -70,7 +70,7 @@ permalink: /about/
 <h3>Awards</h3>
 <ul>
 {% for award in site.data.awards %}
-<li>{% if award.url %}<a href="{{ award.url }}" target="_blank" rel="noopener">{{ award.name }}</a>{% else %}{{ award.name }}{% endif %}{% if award.detail %} {{ award.detail }}{% endif %}</li>
+<li>{% if award.url %}<a href="{{ award.url }}" target="_blank" rel="noopener">{{ award.name }}</a>{% include link-icon.html url=award.url %}{% else %}{{ award.name }}{% endif %}{% if award.detail %} {{ award.detail }}{% endif %}</li>
 {% endfor %}
 </ul>
 </div>

@@ -56,7 +56,7 @@ I have worked on blockchain and zero-knowledge proofs for health and genomic dat
 {% include card-head.html title="Awards &amp; scholarships" icon="trophy" tone="amber" url="/about/" %}
 <ul class="award-list">
 {% for award in site.data.awards limit:4 %}
-<li>{% if award.url %}<a href="{{ award.url }}" target="_blank" rel="noopener">{{ award.name }}</a>{% else %}{{ award.name }}{% endif %}</li>
+<li>{% if award.url %}<a href="{{ award.url }}" target="_blank" rel="noopener">{{ award.name }}</a>{% include link-icon.html url=award.url %}{% else %}{{ award.name }}{% endif %}</li>
 {% endfor %}
 </ul>
 </div>

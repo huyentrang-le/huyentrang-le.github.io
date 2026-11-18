@@ -26,15 +26,16 @@ permalink: /projects/
 {% if project.year or project.role %}<p class="project-meta">{% if project.year %}<span>{% include icon.html name="calendar" %} {{ project.year }}</span>{% endif %}{% if project.role %}<span>{% include icon.html name="user" %} {{ project.role }}</span>{% endif %}</p>{% endif %}
 <p class="project-desc">{{ project.description }}</p>
 {% if project.authors %}<p class="project-authors">{{ project.authors }}</p>{% endif %}
-{% if project.website or project.repo or project.docs or project.paper or project.program or project.slides or project.event %}
+{% if project.website or project.repo or project.docs or project.paper or project.program or project.slides or project.event or project.facebook %}
 <div class="pub-actions">
-{% if project.website %}<a href="{{ project.website }}" target="_blank" rel="noopener" class="btn-pill btn-website">Website</a>{% endif %}
-{% if project.repo %}<a href="{{ project.repo }}" target="_blank" rel="noopener" class="btn-pill btn-git">Code</a>{% endif %}
-{% if project.docs %}<a href="{{ project.docs }}" target="_blank" rel="noopener" class="btn-pill btn-link">Docs</a>{% endif %}
-{% if project.paper %}<a href="{{ project.paper }}" target="_blank" rel="noopener" class="btn-pill btn-link">Paper</a>{% endif %}
-{% if project.program %}<a href="{{ project.program }}" target="_blank" rel="noopener" class="btn-pill btn-link">Program</a>{% endif %}
-{% if project.slides %}<a href="{{ project.slides }}" target="_blank" rel="noopener" class="btn-pill btn-slides">Slides</a>{% endif %}
-{% if project.event %}<a href="{{ project.event }}" target="_blank" rel="noopener" class="btn-pill btn-link">Event</a>{% endif %}
+{% if project.website %}{% include link-btn.html url=project.website label="Website" icon="globe" %}{% endif %}
+{% if project.repo %}{% include link-btn.html url=project.repo label="Code" icon="github" %}{% endif %}
+{% if project.docs %}{% include link-btn.html url=project.docs label="Docs" icon="book-open" %}{% endif %}
+{% if project.paper %}{% include link-btn.html url=project.paper label="Paper" icon="cv" %}{% endif %}
+{% if project.program %}{% include link-btn.html url=project.program label="Program" icon="calendar" %}{% endif %}
+{% if project.slides %}{% include link-btn.html url=project.slides label="Slides" icon="presentation" %}{% endif %}
+{% if project.event %}{% include link-btn.html url=project.event label="Event" icon="calendar" %}{% endif %}
+{% if project.facebook %}{% include link-btn.html url=project.facebook label="Facebook" icon="facebook" %}{% endif %}
 </div>
 {% endif %}
 </article>

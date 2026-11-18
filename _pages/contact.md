@@ -31,8 +31,8 @@ permalink: /contact/
   src="https://www.openstreetmap.org/export/embed.html?bbox={{ lon | minus: 0.006 }},{{ lat | minus: 0.003 }},{{ lon | plus: 0.006 }},{{ lat | plus: 0.003 }}&amp;layer=mapnik&amp;marker={{ lat }},{{ lon }}"></iframe>
 </div>
 <div class="pub-actions">
-<a href="https://www.openstreetmap.org/?mlat={{ lat }}&amp;mlon={{ lon }}#map=17/{{ lat }}/{{ lon }}" target="_blank" rel="noopener" class="btn-pill btn-link">Larger map</a>
-{% if loc.url %}<a href="{{ loc.url }}" target="_blank" rel="noopener" class="btn-pill btn-website">Website</a>{% endif %}
+<a href="https://www.openstreetmap.org/?mlat={{ lat }}&amp;mlon={{ lon }}#map=17/{{ lat }}/{{ lon }}" target="_blank" rel="noopener" class="pub-btn">{% include icon.html name="map-pin" %}Larger map</a>
+{% if loc.url %}{% include link-btn.html url=loc.url label="Website" icon="globe" %}{% endif %}
 </div>
 </div>
 {% endfor %}

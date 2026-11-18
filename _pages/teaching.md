@@ -20,7 +20,7 @@ permalink: /teaching/
 {% if c.description %}<p class="project-desc">{{ c.description }}</p>{% endif %}
 {% if c.links %}
 <div class="pub-actions">
-{% for link in c.links %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="btn-pill btn-link">{{ link.label }}</a>{% endfor %}
+{% for link in c.links %}{% include link-btn.html url=link.url label=link.label %}{% endfor %}
 </div>
 {% endif %}
 </article>

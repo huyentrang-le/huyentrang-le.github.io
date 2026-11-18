@@ -1,0 +1,6 @@
+{% comment %}
+  Link button with an icon picked from the URL or label. Its color comes from
+  its position in the row (see .pub-actions in _sass/components/_palette.scss),
+  so buttons side by side never share a color.
+  Params: url, label, icon (optional, overrides the automatic choice)
+{% endcomment %}{% assign u = include.url | downcase %}{% assign l = include.label | downcase %}{% assign n = include.icon %}{% unless n %}{% if u contains 'facebook.com' %}{% assign n = 'facebook' %}{% elsif u contains 'linkedin.com' %}{% assign n = 'linkedin' %}{% elsif u contains 'github.com' %}{% assign n = 'github' %}{% elsif u contains 'drive.google.com' %}{% assign n = 'folder' %}{% elsif u contains 'docs.google.com/presentation' or l contains 'slides' %}{% assign n = 'presentation' %}{% elsif u contains '/certification/' or l contains 'certificate' %}{% assign n = 'badge-check' %}{% elsif u contains '.pdf' %}{% assign n = 'cv' %}{% elsif l contains 'notes' %}{% assign n = 'notebook' %}{% elsif l contains 'demo' or l contains 'website' %}{% assign n = 'globe' %}{% else %}{% assign n = 'link' %}{% endif %}{% endunless %}<a href="{{ include.url }}" target="_blank" rel="noopener" class="pub-btn">{% include icon.html name=n %}{{ include.label }}</a>

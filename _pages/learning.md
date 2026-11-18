@@ -27,7 +27,7 @@ permalink: /learning/
 {% if item.description %}<br><span class="text-muted">{{ item.description }}</span>{% endif %}
 {% if item.links %}
 <div class="pub-actions" style="margin-top: var(--space-2);">
-{% for link in item.links %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="btn-pill btn-link">{{ link.label }}</a>{% endfor %}
+{% for link in item.links %}{% include link-btn.html url=link.url label=link.label %}{% endfor %}
 </div>
 {% endif %}
 </li>
@@ -40,7 +40,7 @@ permalink: /learning/
 <div class="learn-line">
 {% include icon.html name=item_icon class="learn-item-icon" %}
 <span><strong>{{ item.course }}</strong>{% if item.title %}: {{ item.title }}{% endif %}</span>
-{% for link in item.links %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="btn-pill btn-link">{{ link.label }}</a>{% endfor %}
+{% for link in item.links %}{% include link-btn.html url=link.url label=link.label %}{% endfor %}
 </div>
 {% endfor %}
 <div class="learn-items balanced-grid">
@@ -58,7 +58,7 @@ permalink: /learning/
 {% endif %}
 {% if item.links %}
 <div class="pub-actions">
-{% for link in item.links %}<a href="{{ link.url }}" target="_blank" rel="noopener" class="btn-pill btn-link">{{ link.label }}</a>{% endfor %}
+{% for link in item.links %}{% include link-btn.html url=link.url label=link.label %}{% endfor %}
 </div>
 {% endif %}
 </div>

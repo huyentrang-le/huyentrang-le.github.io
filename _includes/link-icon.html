@@ -1,0 +1,4 @@
+{% comment %}
+  Small colored icon that shows where a link goes (Facebook, LinkedIn, GitHub,
+  Google Scholar, or a generic web page). Param: url
+{% endcomment %}{% assign u = include.url | downcase %}{% if u contains 'facebook.com' %}{% assign n = 'facebook' %}{% assign b = 'facebook' %}{% assign t = 'Facebook' %}{% elsif u contains 'linkedin.com' %}{% assign n = 'linkedin' %}{% assign b = 'linkedin' %}{% assign t = 'LinkedIn' %}{% elsif u contains 'github.com' %}{% assign n = 'github' %}{% assign b = 'github' %}{% assign t = 'GitHub' %}{% elsif u contains 'scholar.google' %}{% assign n = 'google-scholar' %}{% assign b = 'scholar' %}{% assign t = 'Google Scholar' %}{% else %}{% assign n = 'link' %}{% assign b = 'web' %}{% assign t = 'Web page' %}{% endif %}<span class="link-src brand-{{ b }}" title="{{ t }}" aria-hidden="true">{% include icon.html name=n %}</span>
