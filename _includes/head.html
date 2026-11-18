@@ -40,15 +40,12 @@
   {% endif %}
 
   {% unless site.dark_mode == false %}
-  <!-- Dark mode: apply saved theme before paint to prevent flash -->
+  <!-- Light by default; apply a theme the visitor chose before paint to prevent flash -->
   <script>
     (function() {
-      var saved = localStorage.getItem('theme');
-      if (saved) {
-        document.documentElement.setAttribute('data-bs-theme', saved);
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.setAttribute('data-bs-theme', 'dark');
-      }
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      document.documentElement.setAttribute('data-bs-theme', saved === 'dark' ? 'dark' : 'light');
     })();
   </script>
   {% endunless %}
