@@ -1,0 +1,84 @@
+// =============================================================
+// Icon palette — colored section icons and brand-colored links
+// =============================================================
+// Each tone is set once for light mode and lightened for dark mode so
+// icons stay legible on both surfaces. Use `.tone-NAME` on an element
+// (usually `.icon-badge`) to color it.
+
+:root {
+  --tone-blue: #1f6fd1;
+  --tone-teal: #138a7e;
+  --tone-green: #4f8a10;
+  --tone-amber: #b7720a;
+  --tone-rose: #c8384f;
+  --tone-violet: #7048c2;
+
+  --brand-scholar: #4285f4;
+  --brand-linkedin: #0a66c2;
+  --brand-orcid: #7fa628;
+  --brand-email: #d14836;
+  --brand-mono: #24292f;   // GitHub, X
+}
+
+[data-bs-theme="dark"] {
+  --tone-blue: #74aef5;
+  --tone-teal: #5fd0c2;
+  --tone-green: #a3d65c;
+  --tone-amber: #f2c45a;
+  --tone-rose: #f2899a;
+  --tone-violet: #b59cf0;
+
+  --brand-scholar: #8ab4f8;
+  --brand-linkedin: #6cb0f5;
+  --brand-orcid: #b8dc6a;
+  --brand-email: #f28b82;
+  --brand-mono: #e8e4dc;
+}
+
+.tone-blue   { --tone: var(--tone-blue); }
+.tone-teal   { --tone: var(--tone-teal); }
+.tone-green  { --tone: var(--tone-green); }
+.tone-amber  { --tone: var(--tone-amber); }
+.tone-rose   { --tone: var(--tone-rose); }
+.tone-violet { --tone: var(--tone-violet); }
+
+// Rounded square holding a colored icon, used next to section titles
+.icon-badge {
+  --tone: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-md);
+  color: var(--tone);
+  background-color: color-mix(in srgb, var(--tone) 13%, transparent);
+  font-size: 1.05rem;
+  flex-shrink: 0;
+
+  .icon { vertical-align: 0; }
+}
+
+// Section title with a leading icon badge
+.sec-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  &::after { display: none; }
+}
+
+// Brand colors on social icon links (sidebar, contact page)
+.icon-link {
+  &.brand-email   { color: var(--brand-email); }
+  &.brand-scholar { color: var(--brand-scholar); }
+  &.brand-github  { color: var(--brand-mono); }
+  &.brand-x       { color: var(--brand-mono); }
+  &.brand-linkedin { color: var(--brand-linkedin); }
+  &.brand-orcid   { color: var(--brand-orcid); }
+  &.brand-cv      { color: var(--tone-amber); }
+
+  &[class*="brand-"]:hover {
+    background-color: color-mix(in srgb, currentColor 12%, transparent);
+  }
+}
