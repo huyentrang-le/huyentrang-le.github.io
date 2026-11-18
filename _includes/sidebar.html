@@ -37,17 +37,6 @@
 </div>
 </div>
 
-{% if site.data.talks.size > 0 %}
-<div class="section-card home-card">
-{% include card-head.html title="Talks &amp; posters" icon="presentation" tone="blue" url="/research/#talks" %}
-<ul class="home-list compact">
-{% for talk in site.data.talks limit:3 %}
-<li><a href="{{ '/research/#talks' | relative_url }}" class="home-list-title">{{ talk.title }}</a><span class="home-list-meta">{{ talk.event | split: " (" | first }}, {{ talk.year }}</span></li>
-{% endfor %}
-</ul>
-</div>
-{% endif %}
-
 <div class="section-card home-card">
 {% include card-head.html title="Teaching" icon="graduation-cap" tone="green" url="/teaching/" %}
 {% if site.data.teaching and site.data.teaching.size > 0 %}
@@ -60,6 +49,18 @@
 <p class="home-card-note">Network courses coming soon.</p>
 {% endif %}
 </div>
+
+{% if site.data.learning %}
+<div class="section-card home-card">
+{% include card-head.html title="Learning materials" icon="notebook" tone="teal" url="/learning/" %}
+<ul class="home-list compact">
+{% for cat in site.data.learning %}
+{% assign n = 0 %}{% for g in cat.groups %}{% assign n = n | plus: g.items.size %}{% endfor %}
+<li class="tone-{{ cat.tone }}"><a href="{{ '/learning/#' | append: cat.id | relative_url }}" class="home-list-title">{% include icon.html name=cat.icon class="home-list-icon" %}{{ cat.title }}</a><span class="home-list-meta">{{ n }} items in {{ cat.groups.size }} group{% if cat.groups.size != 1 %}s{% endif %}</span></li>
+{% endfor %}
+</ul>
+</div>
+{% endif %}
 
 {% if site.data.locations %}
 <div class="section-card home-card">

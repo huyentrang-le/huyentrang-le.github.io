@@ -9,7 +9,6 @@ permalink: /research/
 <nav class="page-tabs" aria-label="On this page" markdown="0">
 <a href="#topics">{% include icon.html name="lightbulb" class="tone-teal" %} Topics</a>
 <a href="#publications">{% include icon.html name="book-open" class="tone-blue" %} Publications</a>
-<a href="#talks">{% include icon.html name="presentation" class="tone-rose" %} Talks &amp; posters</a>
 </nav>
 
 <h2 id="topics" class="sec-title"><span class="icon-badge tone-teal">{% include icon.html name="lightbulb" %}</span>Research topics</h2>
@@ -43,10 +42,3 @@ permalink: /research/
 {% bibliography --query @inproceedings %}
 </div>
 </section>
-
-{% if site.data.talks.size > 0 %}
-<section id="talks" class="section-card" markdown="0">
-<h2 class="sec-title"><span class="icon-badge tone-rose">{% include icon.html name="presentation" %}</span>Talks &amp; posters</h2>
-{% for talk in site.data.talks %}{% include talk.html talk=talk %}{% endfor %}
-</section>
-{% endif %}

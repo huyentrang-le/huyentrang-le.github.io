@@ -1,6 +1,6 @@
 ---
 layout: redirect
 permalink: /talks/
-redirect_to: /research/#talks
+redirect_to: /research/#publications
 sitemap: false
 ---

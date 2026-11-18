@@ -9,7 +9,8 @@ I am a PhD candidate at Cnam and ECE Engineering School (LyRIDS / CEDRIC laborat
 ## What's on the site
 
 - **Home**: short introduction, research interests, awards and scholarships, latest news and selected publications
-- **Research**: PhD thesis, research topics, publications (with BibTeX) and talks & posters, on one page
+- **About**: profile, education, PhD thesis and all awards
+- **Research**: research topics and publications, with links to papers, slides, posters, demos and BibTeX
 - **Projects**: grouped into hackathons & challenges, research prototypes, and events & community
 - **Teaching**: networking courses, to be added
 - **Learning Materials**: lab notes (by research project), course materials (by education level) and certificates
@@ -20,9 +21,10 @@ I am a PhD candidate at Cnam and ECE Engineering School (LyRIDS / CEDRIC laborat
 | What | Where |
 |------|-------|
 | Name, links, menu | `_config.yml` |
-| Publications | `assets/ref.bib` |
+| Publications and their links (pdf, code, slides, poster, demo, event) | `assets/ref.bib` |
 | Education and PhD thesis | `_data/pi.yml` |
-| News, awards, talks | `_data/news.yml`, `_data/awards.yml`, `_data/talks.yml` |
+| Research topics | `_data/research_topics.yml` |
+| News, awards | `_data/news.yml`, `_data/awards.yml` |
 | Projects and their categories | `_data/projects.yml`, `_data/project_categories.yml` |
 | Teaching | `_data/teaching.yml` |
 | Learning materials | `_data/learning.yml` |

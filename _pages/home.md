@@ -61,15 +61,3 @@ I have worked on blockchain and zero-knowledge proofs for health and genomic dat
 </ul>
 </div>
 {% endif %}
-
-{% if site.data.learning %}
-<div class="section-card home-card" markdown="0">
-{% include card-head.html title="Learning materials" icon="notebook" tone="teal" url="/learning/" %}
-<ul class="home-list">
-{% for cat in site.data.learning %}
-{% assign n = 0 %}{% for g in cat.groups %}{% assign n = n | plus: g.items.size %}{% endfor %}
-<li class="tone-{{ cat.tone }}"><a href="{{ '/learning/#' | append: cat.id | relative_url }}" class="home-list-title">{% include icon.html name=cat.icon class="home-list-icon" %}{{ cat.title }}</a><span class="home-list-meta">{{ n }} items in {{ cat.groups.size }} group{% if cat.groups.size != 1 %}s{% endif %}</span></li>
-{% endfor %}
-</ul>
-</div>
-{% endif %}
