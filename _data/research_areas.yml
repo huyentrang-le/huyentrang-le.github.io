@@ -38,17 +38,20 @@
 
 - id: blockchain
   chip: Blockchain
-  name: Blockchain for Health Data
+  name: Blockchain for Health Data Records Privacy
   tone: violet
   icon: database
-  keywords: [Sui, Move smart contracts, Walrus, Electronic health records, Genomic data sharing]
+  keywords: [Health data records, Data specifications, Access control, Traceability, Sui, Walrus]
   method: >-
-    I design platforms where hospitals, laboratories and patients share electronic health
-    records and genomic data without a central custodian. Access policies and audit trails
-    live in Sui Move smart contracts, while the encrypted records themselves are stored
-    off-chain on Walrus, Sui's decentralised blob storage, and referenced on-chain by
-    content identifier. This keeps large medical files out of the ledger while every
-    access stays traceable.
+    Health data records come in many specifications: clinical electronic health records,
+    genomic sequences and variants, and biomedical measurements, each with its own size,
+    sensitivity and sharing rules. I design blockchain platforms that keep these records
+    private while letting several parties use them without a central custodian. My M2
+    internship at IBISC focused on multi-party genomic data sharing; in the Shaker
+    Genopole and D4Gen hackathons I applied the same approach to clinical EHRs on Sui,
+    with access policies and audit trails in Move smart contracts and the encrypted
+    records stored off-chain on Walrus, Sui's decentralised blob storage, referenced
+    on-chain so that every access stays traceable.
   tech: [Sui, Move, Walrus decentralised storage, Sui CLI]
 
 - id: zkp

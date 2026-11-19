@@ -13,7 +13,7 @@ permalink: /
 
 My research is on **trustworthy networked systems**: networks whose timing can be proven, and data infrastructures whose privacy can be proven.
 On the networking side, I use deterministic network calculus to certify worst-case latency in Time-Sensitive Networks.
-On the data side, I build blockchain platforms with zero-knowledge proofs and decentralised storage so that health and genomic data can be shared, audited and analysed without exposing patients.
+On the data side, I build blockchain platforms with zero-knowledge proofs and decentralised storage so that health data records of different specifications, from clinical EHRs to genomic data, can be shared, audited and analysed without exposing patients.
 
 I am a PhD candidate at [Cnam](https://www.cnam.fr/) and [ECE Engineering School](https://www.ece.fr/) in Paris (2026–2029), in the [LyRIDS](https://www.ece.fr/en/research-focuses-and-structuring) and [CEDRIC](https://cedric.cnam.fr/) laboratories.
 My thesis uses deterministic [network calculus](https://en.wikipedia.org/wiki/Network_calculus) to keep worst-case latency guarantees certified while [Time-Sensitive Networks](https://1.ieee802.org/tsn/) are reconfigured at runtime.
