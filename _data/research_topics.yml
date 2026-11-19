@@ -1,8 +1,8 @@
 # Research topics, shown as cards on the Research page; the first three are
 # also listed on the home page. Links to papers, code, slides and demos live
 # in the publication entries (assets/ref.bib), not here.
-# Each entry needs: title, keywords (list), summary (one line, for the home page),
-#                   description (a short paragraph)
+# Each entry needs: title, keywords (list of 4-5, no "&"), summary (one line, for the home page),
+#                   description (two or three sentences: problem, method, result)
 
 - title: "Certified Dynamic Reconfiguration of TSN Networks"
   keywords: [Time-Sensitive Networking, Network calculus, Worst-case latency, Dynamic reconfiguration]
@@ -14,59 +14,57 @@
     reconfigured at runtime.
 
 - title: "Secure Genomic Data Sharing with Zero-Knowledge Proofs"
-  keywords: [Blockchain, Zero-knowledge proofs, Genomic data, Privacy]
+  keywords: [Blockchain, Zero-knowledge proofs, Genomic data, Multi-party sharing, Privacy]
   summary: "Zero-knowledge proofs for multi-party genomic data sharing on blockchain."
   description: >-
-    Blockchain-based platforms for sharing genomic data among multiple parties while
-    protecting participants' identities. This work analyzes zero-knowledge proof (ZKP)
-    based approaches to multi-party genomic data sharing and builds trust-based sharing
-    and privacy-preserving aggregated biomedical analysis on top of them.
+    Genomic data is shared among hospitals, laboratories and researchers, yet it identifies
+    the people it comes from. This work analyses zero-knowledge proof (ZKP) approaches to
+    multi-party genomic data sharing on blockchain, and builds trust-based sharing and
+    privacy-preserving aggregated biomedical analysis on top of them.
 
 - title: "Selective Disclosure of Electronic Health Records"
-  keywords: [Sui blockchain, Zero-knowledge smart contracts, Health records, Access control]
+  keywords: [Sui blockchain, Zero-knowledge smart contracts, Electronic health records, Walrus, Access control]
   summary: "Traceable sharing of health records on the Sui blockchain with zero-knowledge contracts."
   description: >-
-    Secure, traceable transmission of electronic health records on the Sui blockchain,
-    with contextual access control and privacy protection through zero-knowledge smart
-    contracts, guaranteeing the confidentiality, integrity and traceability of medical data.
+    Electronic health records must reach the right clinician without exposing the whole
+    file. This work combines contextual access control in Sui Move smart contracts,
+    zero-knowledge contracts that disclose only the attributes needed, and encrypted
+    off-chain storage on Walrus, guaranteeing confidentiality, integrity and traceability.
 
 - title: "SDN-based Medical IoT Infrastructure"
   keywords: [Software-defined networking, Medical IoT, OpenFlow, Mininet-WiFi]
   summary: "Secure collection of medical IoT data over software-defined hospital networks."
   description: >-
-    A secure infrastructure for collecting health data from medical IoT devices, with
-    intelligent orchestration for autonomous, adaptive and user-centred software-defined
-    networks, evaluated in Mininet-WiFi over OpenFlow.
+    Medical IoT devices produce sensitive data over heterogeneous hospital networks. This
+    work designs a secure collection infrastructure with intelligent orchestration for
+    autonomous, adaptive and user-centred software-defined networks, evaluated in
+    Mininet-WiFi over OpenFlow.
 
 - title: "Language Agents for IoT Orchestration"
-  keywords: [Language agents, Multi-agent LLM crews, Autonomic computing, MAPE-K, Edge–Fog–Cloud continuum, Model Context Protocol, Intent-based orchestration, Smart healthcare]
+  keywords: [Language agents, Multi-agent systems, MAPE-K, Model Context Protocol, IoT orchestration]
   summary: "LLMThings: crews of language agents that orchestrate real IoT deployments from natural-language intents."
   description: >-
-    IoT deployments across the edge–fog–cloud continuum are heterogeneous, large-scale and
-    dynamic, and classical orchestration (fixed policies, heuristics, reinforcement learning)
-    needs domain expertise and adapts poorly to unseen situations. Existing LLM-based
-    approaches are limited to a single agent, a fixed strategy or one task. LLMThings is an
-    experimentation platform where practitioners define specialised agents, group them into
-    crews with a chosen coordination strategy (MAPE-K, OODA, FOCALE), and plug in IoT
-    devices, AI models and external services as MCP tools. An end user, such as a nurse,
-    states an intent in natural language; the crew turns it into a workflow executed in
-    real time, while quality-of-service metrics (latency, signal, packet loss) are traced
-    and visualised. The testbed replicates a nursing home at Université d'Évry: 13 ESP32
-    cameras over Wi-Fi and ZigBee, about 30 sensors and a two-GPU server, used for fall
-    prevention by tracking a resident under energy and bandwidth constraints with a
-    five-agent MAPE-K crew. The platform also serves teaching, in the Agentic IoT course
-    at Université d'Évry, and hackathons. Best Presentation Award at JDSE 2026.
+    Classical IoT orchestration relies on fixed policies and adapts poorly to unseen
+    situations. LLMThings lets crews of language agents, coordinated by strategies such as
+    MAPE-K or OODA, turn a natural-language intent into a workflow over devices exposed as
+    MCP tools, executed in real time on a nursing-home testbed of ESP32 cameras for fall
+    prevention. Best Presentation Award at JDSE 2026.
 
 - title: "Location Privacy in Multimodal Transportation"
-  keywords: [Location privacy, Mobility trajectories, Context awareness]
-  summary: "Context-aware protection of mobility trajectories across transport modes."
+  keywords: [Geo-indistinguishability, GPS obfuscation, Location privacy, Multimodal transportation]
+  summary: "Context-aware GPS obfuscation adapted to each transport mode."
   description: >-
-    An adaptive privacy-preserving system for multimodal mobility trajectories that adjusts
-    the level of protection to the user's context and mode of transport.
+    GPS traces reveal homes, workplaces and transport modes. This system splits real-world
+    trajectories (Geolife) by transport mode and obfuscates them with geo-indistinguishability
+    mechanisms tuned to each mode, measuring the privacy–utility trade-off with Privkit:
+    Velocity-Aware Geo-Ind kept distortion mostly below 50 m, against about 120 m for the
+    Planar Laplace baseline. M1 internship at the University of Porto.
 
 - title: "Deep Reinforcement Learning for Edge-Cloud Systems"
-  keywords: [Deep reinforcement learning, Multi-objective optimisation, Edge-cloud computing]
+  keywords: [Deep reinforcement learning, Multi-objective optimisation, Edge-cloud computing, Server selection]
   summary: "Multi-objective deep reinforcement learning for edge-cloud server selection."
   description: >-
-    A multi-objective deep reinforcement learning algorithm for selecting edge-cloud servers,
-    improving network routing performance by more than 60% over traditional algorithms.
+    Choosing which edge or cloud server handles a request trades off latency, load and cost.
+    This work proposes a multi-objective deep reinforcement learning algorithm for
+    edge-cloud server selection, improving network routing performance by more than 60%
+    over traditional algorithms.
