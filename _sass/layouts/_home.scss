@@ -280,3 +280,58 @@
 .home-grid > div:last-child .profile-card {
   margin-bottom: var(--space-6);
 }
+
+// Research areas card — one block per keyword chip, with methodology and tools
+.area-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  > li {
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--border-color);
+    max-width: none;
+    scroll-margin-top: 5rem;
+
+    &:first-child { padding-top: 0; }
+    &:last-child { border-bottom: none; padding-bottom: 0; }
+    &:target .area-name { color: var(--tone, var(--accent)); }
+  }
+
+  .area-name {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    font-size: 1rem;
+    margin: 0 0 var(--space-2);
+
+    &::after { display: none; }
+  }
+
+  .home-list-icon {
+    color: var(--tone, var(--accent));
+    flex-shrink: 0;
+    position: relative;
+    top: 0.1em;
+  }
+
+  .topic-keywords span {
+    color: var(--tone, var(--tone-teal));
+    background-color: color-mix(in srgb, var(--tone, var(--tone-teal)) 11%, transparent);
+  }
+
+  .area-method {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0 0 var(--space-2);
+    max-width: none;
+  }
+
+  .area-tech {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: none;
+  }
+}
