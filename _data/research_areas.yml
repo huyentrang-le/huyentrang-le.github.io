@@ -16,21 +16,25 @@
     improvement over classical heuristics), and language agents that turn clinicians'
     natural-language intents into orchestration of medical IoT devices over MCP on an
     SDN hospital network (LLMThings, HOPPERS).
-  tech: [PyTorch, CrewAI, LangChain / LangGraph, Model Context Protocol, RAG]
+  tech: [Python, TensorFlow, OpenAI Gym, NumPy, CrewAI, LangChain, LangGraph, Model Context Protocol, RAG]
 
 - id: dp
   chip: Differential Privacy
-  name: Differential Privacy &amp; Data Protection
+  name: Differential Privacy for Location Data
   tone: amber
-  icon: user
-  keywords: [Differential privacy, Location privacy, Mobility trajectories, Context awareness]
+  icon: map-pin
+  keywords: [Geo-indistinguishability, GPS obfuscation, Location privacy-preserving mechanisms, Multimodal transportation, Privacy–utility trade-off]
   method: >-
-    Statistical privacy complements cryptography: instead of hiding data, calibrated noise
-    bounds what any output can reveal about one individual. I studied context-aware
-    protection of multimodal mobility trajectories, where the privacy budget adapts to the
-    user's transport mode and surroundings, and I am interested in combining differential
-    privacy with ZKPs for aggregate statistics over genomic cohorts.
-  tech: [Privacy budgets, Location obfuscation, Trajectory datasets]
+    Location-based services collect GPS traces from which homes, workplaces and transport
+    modes can be inferred. During my M1 internship at the University of Porto, I built a
+    context-aware pipeline
+    that first splits real-world trajectories by transport mode, then obfuscates each GPS
+    point with calibrated noise using four geo-indistinguishability mechanisms (Planar
+    Laplace, Adaptive, Clustering and Velocity-Aware Geo-Ind), and finally scores privacy
+    and utility, such as average quality loss in metres. Adapting the mechanism to the
+    context pays off: Velocity-Aware Geo-Ind often stays below 50 m of distortion across
+    all modes, against about 120 m for the Planar Laplace baseline.
+  tech: [Python, Privkit, NumPy, pandas, Matplotlib, Geolife dataset]
 
 - id: blockchain
   chip: Blockchain
@@ -45,7 +49,7 @@
     off-chain on Walrus, Sui's decentralised blob storage, and referenced on-chain by
     content identifier. This keeps large medical files out of the ledger while every
     access stays traceable.
-  tech: [Sui, Move, Walrus decentralised storage, Multi-party data sharing]
+  tech: [Sui, Move, Walrus decentralised storage, Sui CLI]
 
 - id: zkp
   chip: ZKP
@@ -59,7 +63,7 @@
     and use them for selective disclosure of health records (prove a clinical attribute,
     hide the rest), privacy-preserving aggregated biomedical analysis, and anonymous
     threshold reporting in SafeProof.
-  tech: [zk-SNARK circuits, ZKContract on Sui, Pedersen-style commitments, Nullifiers]
+  tech: [zk-SNARKs, ZKContract on Sui, Commitments, Nullifiers, JavaScript]
 
 - id: tsn
   chip: TSN
@@ -73,31 +77,32 @@
     change the worst-case delay of every flow. The goal is a reconfiguration procedure
     that is certified before it is applied, so latency guarantees hold during and after
     the change.
-  tech: [IEEE 802.1Qav / Qbv / Qcr, Industrial and in-vehicle networks, AFDX]
+  tech: [IEEE 802.1Qav, IEEE 802.1Qbv, IEEE 802.1Qcr, Industrial and in-vehicle networks, AFDX]
 
 - id: nc
-  chip: NC
+  chip: Network Calculus
   name: Network Calculus
   tone: blue
   icon: braces
-  keywords: [Deterministic network calculus, Arrival and service curves, Worst-case latency, Formal bounds]
+  keywords: [Deterministic network calculus, Arrival and service curves, Min-plus algebra, Worst-case latency, Formal bounds]
   method: >-
     Deterministic network calculus bounds the worst-case delay and backlog of a flow from
     arrival curves (what a source may send) and service curves (what a node guarantees),
     using min-plus algebra. Unlike measurement or simulation, which only observe a lower
     bound on the worst case, these bounds are proofs. I use them as the certification
-    layer of my thesis.
-  tech: [NetworkCalculus.org DNC, AFDX network analysis, Min-plus algebra]
+    layer of my thesis and maintain open course material on the topic.
+  tech: [NetworkCalculus.org DNC, AFDX network analysis tools, Python, Quarto]
 
-- id: tools
-  chip: Tools
-  name: Tools &amp; Experimental Platforms
-  tone: teal
-  icon: code
-  keywords: [Network emulation, SDN controllers, Smart contract development, Prototyping]
+- id: iot-sdn
+  chip: IoT &amp; SDN
+  name: IoT &amp; Software-Defined Networking
+  tone: violet
+  icon: building
+  keywords: [Medical IoT, Software-defined networking, OpenFlow, Intent-based orchestration, Smart hospitals]
   method: >-
-    Every result is backed by a prototype. I emulate networks in Mininet-WiFi with
-    OpenFlow and ONOS, compute bounds with network calculus tools, write and test Move
-    contracts on Sui with Walrus storage, and build demos with FastAPI and Next.js.
-    Code and course material are on GitHub (CNAM-ECE, D4GenHackathon, TTGenProject).
-  tech: [Mininet-WiFi, OpenFlow, ONOS, Sui CLI, Walrus, FastAPI, Next.js, Python, Quarto]
+    I design secure infrastructures that collect data from medical IoT devices over
+    software-defined hospital networks, where a central controller programs forwarding
+    and isolation policies. On top of this, language agents translate clinicians' intents
+    into device and network actions through standardised MCP interfaces (HOPPERS,
+    LLMThings). Prototypes are emulated in Mininet-WiFi before any deployment.
+  tech: [Python, Mininet-WiFi, OpenFlow, ONOS, Model Context Protocol, FastAPI, Next.js]
