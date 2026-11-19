@@ -1,7 +1,8 @@
 # Research areas, shown as keyword chips under the name on the home page and
 # as a "Research areas" card that explains each one.
 # Each entry needs: id (anchor), chip (short label), name, keywords (list),
-#                   method (a short paragraph on methodology), tech (list)
+#                   method (a short paragraph on methodology),
+#                   tech (languages, frameworks and platforms only)
 # Optional: tone (icon colour), icon
 
 - id: ai
@@ -16,7 +17,7 @@
     improvement over classical heuristics), and language agents that turn clinicians'
     natural-language intents into orchestration of medical IoT devices over MCP on an
     SDN hospital network (LLMThings, HOPPERS).
-  tech: [Python, TensorFlow, OpenAI Gym, NumPy, CrewAI, LangChain, LangGraph, Model Context Protocol, RAG]
+  tech: [Python, TensorFlow, OpenAI Gym, NumPy, CrewAI, LangChain, LangGraph]
 
 - id: dp
   chip: Differential Privacy
@@ -34,7 +35,7 @@
     and utility, such as average quality loss in metres. Adapting the mechanism to the
     context pays off: Velocity-Aware Geo-Ind often stays below 50 m of distortion across
     all modes, against about 120 m for the Planar Laplace baseline.
-  tech: [Python, Privkit, NumPy, pandas, Matplotlib, Geolife dataset]
+  tech: [Python, Privkit, NumPy, pandas, Matplotlib]
 
 - id: blockchain
   chip: Blockchain
@@ -52,7 +53,7 @@
     with access policies and audit trails in Move smart contracts and the encrypted
     records stored off-chain on Walrus, Sui's decentralised blob storage, referenced
     on-chain so that every access stays traceable.
-  tech: [Sui, Move, Walrus decentralised storage, Sui CLI]
+  tech: [Sui, Move, Walrus]
 
 - id: zkp
   chip: ZKP
@@ -66,7 +67,7 @@
     and use them for selective disclosure of health records (prove a clinical attribute,
     hide the rest), privacy-preserving aggregated biomedical analysis, and anonymous
     threshold reporting in SafeProof.
-  tech: [zk-SNARKs, ZKContract on Sui, Commitments, Nullifiers, JavaScript]
+  tech: [Sui, Move, JavaScript]
 
 - id: tsn
   chip: TSN
@@ -80,7 +81,7 @@
     change the worst-case delay of every flow. The goal is a reconfiguration procedure
     that is certified before it is applied, so latency guarantees hold during and after
     the change.
-  tech: [IEEE 802.1Qav, IEEE 802.1Qbv, IEEE 802.1Qcr, Industrial and in-vehicle networks, AFDX]
+  tech: [Python, Java, NetworkCalculus.org DNC]
 
 - id: nc
   chip: Network Calculus
@@ -94,7 +95,7 @@
     using min-plus algebra. Unlike measurement or simulation, which only observe a lower
     bound on the worst case, these bounds are proofs. I use them as the certification
     layer of my thesis and maintain open course material on the topic.
-  tech: [NetworkCalculus.org DNC, AFDX network analysis tools, Python, Quarto]
+  tech: [Python, Java, NetworkCalculus.org DNC, Quarto]
 
 - id: iot-sdn
   chip: IoT &amp; SDN
@@ -108,4 +109,4 @@
     and isolation policies. On top of this, language agents translate clinicians' intents
     into device and network actions through standardised MCP interfaces (HOPPERS,
     LLMThings). Prototypes are emulated in Mininet-WiFi before any deployment.
-  tech: [Python, Mininet-WiFi, OpenFlow, ONOS, Model Context Protocol, FastAPI, Next.js]
+  tech: [Python, FastAPI, React, Next.js, Mininet-WiFi, OpenFlow, ONOS]
