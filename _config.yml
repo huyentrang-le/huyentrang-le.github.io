@@ -25,7 +25,7 @@ links:
 accent_color: "#1a7a6d"      # theme color; light and dark variants are derived automatically
 dark_mode: true              # set to false to disable dark mode entirely
 math: false                  # true loads MathJax on every page; or add `math: true` to individual pages
-description: "Academic webpage of LE Huyen-Trang, PhD candidate at ECE and Cnam working on certified dynamic reconfiguration of Time-Sensitive Networks (TSN)"
+description: "Academic webpage of LE Huyen-Trang, PhD candidate at ECE and Cnam: certified worst-case latency in Time-Sensitive Networks (TSN) with network calculus, and privacy-preserving health data sharing with blockchain, zero-knowledge proofs and differential privacy"
 
 # When deploying with the included GitHub Actions workflow these are filled
 # in automatically from your Pages settings (user site, project site, or
