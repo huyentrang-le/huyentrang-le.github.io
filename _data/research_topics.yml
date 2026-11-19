@@ -39,10 +39,23 @@
     networks, evaluated in Mininet-WiFi over OpenFlow.
 
 - title: "Language Agents for IoT Orchestration"
-  keywords: [Language agents, IoT, Orchestration]
-  summary: "LLMThings: language agents that orchestrate IoT systems."
+  keywords: [Language agents, Multi-agent LLM crews, Autonomic computing, MAPE-K, Edge–Fog–Cloud continuum, Model Context Protocol, Intent-based orchestration, Smart healthcare]
+  summary: "LLMThings: crews of language agents that orchestrate real IoT deployments from natural-language intents."
   description: >-
-    LLMThings, an experimentation platform for orchestrating IoT systems with language agents.
+    IoT deployments across the edge–fog–cloud continuum are heterogeneous, large-scale and
+    dynamic, and classical orchestration (fixed policies, heuristics, reinforcement learning)
+    needs domain expertise and adapts poorly to unseen situations. Existing LLM-based
+    approaches are limited to a single agent, a fixed strategy or one task. LLMThings is an
+    experimentation platform where practitioners define specialised agents, group them into
+    crews with a chosen coordination strategy (MAPE-K, OODA, FOCALE), and plug in IoT
+    devices, AI models and external services as MCP tools. An end user, such as a nurse,
+    states an intent in natural language; the crew turns it into a workflow executed in
+    real time, while quality-of-service metrics (latency, signal, packet loss) are traced
+    and visualised. The testbed replicates a nursing home at Université d'Évry: 13 ESP32
+    cameras over Wi-Fi and ZigBee, about 30 sensors and a two-GPU server, used for fall
+    prevention by tracking a resident under energy and bandwidth constraints with a
+    five-agent MAPE-K crew. The platform also serves teaching, in the Agentic IoT course
+    at Université d'Évry, and hackathons. Best Presentation Award at JDSE 2026.
 
 - title: "Location Privacy in Multimodal Transportation"
   keywords: [Location privacy, Mobility trajectories, Context awareness]

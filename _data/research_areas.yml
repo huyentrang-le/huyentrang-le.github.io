@@ -109,4 +109,4 @@
     and isolation policies. On top of this, language agents translate clinicians' intents
     into device and network actions through standardised MCP interfaces (HOPPERS,
     LLMThings). Prototypes are emulated in Mininet-WiFi before any deployment.
-  tech: [Python, FastAPI, React, Next.js, Mininet-WiFi, OpenFlow, ONOS]
+  tech: [Python, FastAPI, React, Next.js, ESP32, ZigBee, Mininet-WiFi, OpenFlow, ONOS]
