@@ -8,7 +8,7 @@ permalink: /
 <p class="home-hero-sub">{{ site.title }}, {{ site.institution }}</p>
 
 <div class="chip-container" markdown="0">
-{% for area in site.data.research_areas %}<a href="#area-{{ area.id }}" class="chip" title="{{ area.name }}">{{ area.chip }}</a>
+{% for area in site.data.research_areas %}{% for label in area.chips %}<a href="#area-{{ area.id }}" class="chip" title="{{ area.name }}">{{ label }}</a>{% endfor %}
 {% endfor %}</div>
 
 My research is on **trustworthy networked systems**: networks whose timing can be proven, and data infrastructures whose privacy can be proven.

@@ -1,12 +1,12 @@
 # Research areas, shown as keyword chips under the name on the home page and
 # as a "Research areas" card that explains each one.
-# Each entry needs: id (anchor), chip (short label), name, keywords (list),
+# Each entry needs: id (anchor), chips (short labels, one chip each), name, keywords (list),
 #                   method (a short paragraph on methodology),
 #                   tech (languages, frameworks and platforms only)
 # Optional: tone (icon colour), icon
 
 - id: ai
-  chip: AI
+  chips: [AI]
   name: AI for Networked Systems
   tone: green
   icon: lightbulb
@@ -20,7 +20,7 @@
   tech: [Python, TensorFlow, OpenAI Gym, NumPy, CrewAI, LangChain, LangGraph]
 
 - id: dp
-  chip: Differential Privacy
+  chips: [Differential Privacy]
   name: Differential Privacy for Location Data
   tone: amber
   icon: map-pin
@@ -38,7 +38,7 @@
   tech: [Python, Privkit, NumPy, pandas, Matplotlib]
 
 - id: blockchain
-  chip: Blockchain
+  chips: [Blockchain]
   name: Blockchain for Health Data Records Privacy
   tone: violet
   icon: database
@@ -56,11 +56,11 @@
   tech: [Sui, Move, Walrus]
 
 - id: zkp
-  chip: ZKP
+  chips: [ZKP]
   name: Zero-Knowledge Proofs
   tone: rose
   icon: badge-check
-  keywords: [Zero-knowledge smart contracts, Selective disclosure, Commitments and nullifiers, Threshold proofs]
+  keywords: [Zero-knowledge smart contracts, Selective disclosure, Commitments, Nullifiers, Threshold proofs]
   method: >-
     Zero-knowledge proofs let a party prove a statement about private data without
     revealing the data. I compare ZKP constructions for multi-party genomic data sharing,
@@ -70,7 +70,7 @@
   tech: [Sui, Move, JavaScript]
 
 - id: tsn
-  chip: TSN
+  chips: [TSN]
   name: Time-Sensitive Networking
   tone: teal
   icon: globe
@@ -84,11 +84,11 @@
   tech: [Python, Java, NetworkCalculus.org DNC]
 
 - id: nc
-  chip: Network Calculus
+  chips: [Network Calculus]
   name: Network Calculus
   tone: blue
   icon: braces
-  keywords: [Deterministic network calculus, Arrival and service curves, Min-plus algebra, Worst-case latency, Formal bounds]
+  keywords: [Deterministic network calculus, Arrival curves, Service curves, Min-plus algebra, Worst-case latency, Formal bounds]
   method: >-
     Deterministic network calculus bounds the worst-case delay and backlog of a flow from
     arrival curves (what a source may send) and service curves (what a node guarantees),
@@ -98,8 +98,8 @@
   tech: [Python, Java, NetworkCalculus.org DNC, Quarto]
 
 - id: iot-sdn
-  chip: IoT &amp; SDN
-  name: IoT &amp; Software-Defined Networking
+  chips: [IoT, SDN]
+  name: IoT and Software-Defined Networking
   tone: violet
   icon: building
   keywords: [Medical IoT, Software-defined networking, OpenFlow, Intent-based orchestration, Smart hospitals]
