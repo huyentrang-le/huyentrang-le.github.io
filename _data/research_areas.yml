@@ -3,6 +3,7 @@
 # Each entry needs: id (anchor), chips (short labels, one chip each), name, keywords (list),
 #                   method (a short paragraph on methodology),
 #                   tech (languages, frameworks and platforms only)
+# Keywords name the methodology and the domain; tools and languages go in tech.
 # Optional: tone (icon colour), icon
 
 - id: ai
@@ -42,7 +43,7 @@
   name: Blockchain for Health Data Records Privacy
   tone: violet
   icon: database
-  keywords: [Health data records, Data specifications, Access control, Traceability, Sui, Walrus]
+  keywords: [Blockchain, Smart contracts, Decentralised storage, Health data records, Access control, Traceability]
   method: >-
     Health data records come in many specifications: clinical electronic health records,
     genomic sequences and variants, and biomedical measurements, each with its own size,
@@ -60,7 +61,7 @@
   name: Zero-Knowledge Proofs
   tone: rose
   icon: badge-check
-  keywords: [Zero-knowledge smart contracts, Selective disclosure, Commitments, Nullifiers, Threshold proofs]
+  keywords: [Zero-knowledge proofs, Zero-knowledge smart contracts, Selective disclosure, Commitments, Nullifiers, Threshold proofs]
   method: >-
     Zero-knowledge proofs let a party prove a statement about private data without
     revealing the data. I compare ZKP constructions for multi-party genomic data sharing,
@@ -74,7 +75,7 @@
   name: Time-Sensitive Networking
   tone: teal
   icon: globe
-  keywords: [IEEE 802.1 TSN, Deterministic Ethernet, Traffic shaping, Runtime reconfiguration]
+  keywords: [Deterministic networking, Traffic shaping, Runtime reconfiguration, Industrial networks]
   method: >-
     I model TSN switches and their shapers (credit-based, time-aware, asynchronous) as
     service curves, then study how stream admission, rerouting and schedule updates
@@ -102,7 +103,7 @@
   name: IoT and Software-Defined Networking
   tone: violet
   icon: building
-  keywords: [Medical IoT, Software-defined networking, OpenFlow, Intent-based orchestration, Smart hospitals]
+  keywords: [Medical IoT, Software-defined networking, Network programmability, Intent-based orchestration, Smart hospitals]
   method: >-
     I design secure infrastructures that collect data from medical IoT devices over
     software-defined hospital networks, where a central controller programs forwarding

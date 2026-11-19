@@ -286,3 +286,10 @@ section[id], h2[id] {
     font-size: 1.05rem;
   }
 }
+
+// Languages and tools line under a research topic description
+.research-tech {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: var(--space-2) 0 0;
+}

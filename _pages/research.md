@@ -20,6 +20,7 @@ permalink: /research/
 <h3 class="research-title">{{ topic.title }}</h3>
 {% if topic.keywords %}<div class="topic-keywords">{% for k in topic.keywords %}<span>{{ k }}</span>{% endfor %}</div>{% endif %}
 <p class="research-desc">{{ topic.description }}</p>
+{% if topic.tech %}<p class="research-tech"><strong>Technologies:</strong> {{ topic.tech | join: ", " }}</p>{% endif %}
 </div>
 </div>
 {% endfor %}
