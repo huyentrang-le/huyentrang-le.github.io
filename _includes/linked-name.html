@@ -1,0 +1,4 @@
+{% comment %}
+  External link whose source icon stays on the same line as its last word.
+  Params: text, url
+{% endcomment %}{% assign _words = include.text | split: ' ' %}{% assign _last = _words | last %}{% assign _head = _words | pop | join: ' ' %}<a href="{{ include.url }}" target="_blank" rel="noopener">{% if _head != '' %}{{ _head }} {% endif %}<span class="link-tail">{{ _last }}{% include link-icon.html url=include.url %}</span></a>

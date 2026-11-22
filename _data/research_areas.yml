@@ -7,11 +7,11 @@
 # Optional: tone (icon colour), icon
 
 - id: ai
-  chips: [AI]
+  chips: [AI, LLM Agents]
   name: AI for Networked Systems
   tone: green
   icon: lightbulb
-  keywords: [Deep reinforcement learning, Multi-objective optimisation, Language agents, Intent-based networking]
+  keywords: [Deep reinforcement learning, Multi-objective optimisation, Edge-cloud server selection, Language agents, Model Context Protocol, Intent-based networking]
   method: >-
     I use learning where analytical models are too costly: multi-objective deep
     reinforcement learning for edge-cloud server selection (more than 60% routing
@@ -21,7 +21,7 @@
   tech: [Python, TensorFlow, OpenAI Gym, NumPy, CrewAI, LangChain, LangGraph]
 
 - id: dp
-  chips: [Differential Privacy]
+  chips: [Differential Privacy, Location Privacy]
   name: Differential Privacy for Location Data
   tone: amber
   icon: map-pin
@@ -39,7 +39,7 @@
   tech: [Python, Privkit, NumPy, pandas, Matplotlib]
 
 - id: blockchain
-  chips: [Blockchain]
+  chips: [Blockchain, Smart Contracts]
   name: Blockchain for Health Data Records Privacy
   tone: violet
   icon: database
@@ -71,11 +71,11 @@
   tech: [Sui, Move, JavaScript]
 
 - id: tsn
-  chips: [TSN]
+  chips: [TSN, Deterministic Networking]
   name: Time-Sensitive Networking
   tone: teal
   icon: globe
-  keywords: [Deterministic networking, Traffic shaping, Runtime reconfiguration, Industrial networks]
+  keywords: [Deterministic networking, Traffic shaping, Credit-based shaper, Time-aware shaper, Stream admission, Runtime reconfiguration, Industrial networks]
   method: >-
     I model TSN switches and their shapers (credit-based, time-aware, asynchronous) as
     service curves, then study how stream admission, rerouting and schedule updates
@@ -103,7 +103,7 @@
   name: IoT and Software-Defined Networking
   tone: violet
   icon: building
-  keywords: [Medical IoT, Software-defined networking, Network programmability, Intent-based orchestration, Smart hospitals]
+  keywords: [Medical IoT, Software-defined networking, Network programmability, Network emulation, Intent-based orchestration, Smart hospitals]
   method: >-
     I design secure infrastructures that collect data from medical IoT devices over
     software-defined hospital networks, where a central controller programs forwarding

@@ -101,7 +101,19 @@
 // Keyword rows fill the full line: each chip grows to share the leftover
 // space, so every row (including the last) ends flush with the text column.
 .chip-container .chip,
-.topic-keywords > span {
+.topic-keywords span {
   flex: 1 1 auto;
   text-align: center;
+}
+
+// site.js groups the tags into lines of similar length (no lone last tag);
+// each line is a full-width flex row with the container's own gap.
+.chip-container.is-balanced,
+.topic-keywords.is-balanced {
+  flex-direction: column;
+}
+
+.tag-row {
+  display: flex;
+  gap: inherit;
 }

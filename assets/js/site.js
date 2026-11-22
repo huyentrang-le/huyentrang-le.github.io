@@ -178,6 +178,79 @@
     });
   }
 
+  // ----- Balanced Keyword Rows -----
+  // Keyword chips and tags wrap like text, which can leave one lone tag on
+  // the last line. Find the narrowest width that keeps the same number of
+  // lines (so every line holds a similar share of tags), group the tags into
+  // those lines, then let each line stretch back to the full width.
+
+  function tagLines(items) {
+    var lines = [];
+    var lastTop = null;
+    items.forEach(function (el) {
+      var top = Math.round(el.getBoundingClientRect().top);
+      if (lastTop === null || Math.abs(top - lastTop) > 2) {
+        lines.push([]);
+        lastTop = top;
+      }
+      lines[lines.length - 1].push(el);
+    });
+    return lines;
+  }
+
+  function balanceTags(box) {
+    // Undo a previous pass so the tags wrap freely again
+    if (box._tags) {
+      box._tags.forEach(function (el) { box.appendChild(el); });
+      box.querySelectorAll(':scope > .tag-row').forEach(function (row) { row.remove(); });
+      box.classList.remove('is-balanced');
+    }
+    var items = box._tags || Array.prototype.slice.call(box.children);
+    box._tags = items;
+    var full = box.clientWidth;
+    if (!full || items.length < 2) return;
+
+    var count = tagLines(items).length;
+    if (count < 2) return;
+
+    var lo = full / count;
+    var hi = full;
+    while (hi - lo > 2) {
+      var mid = (lo + hi) / 2;
+      box.style.width = mid + 'px';
+      if (tagLines(items).length > count) lo = mid; else hi = mid;
+    }
+    box.style.width = hi + 'px';
+    var lines = tagLines(items);
+    box.style.width = '';
+
+    lines.forEach(function (line) {
+      var row = document.createElement('div');
+      row.className = 'tag-row';
+      line.forEach(function (el) { row.appendChild(el); });
+      box.appendChild(row);
+    });
+    box.classList.add('is-balanced');
+  }
+
+  var tagBoxes = document.querySelectorAll('.chip-container, .topic-keywords');
+  if (tagBoxes.length) {
+    var balanceTagsAll = function () { tagBoxes.forEach(balanceTags); };
+    balanceTagsAll();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(balanceTagsAll);
+    var lastTagWidth = window.innerWidth;
+    var tagsQueued = false;
+    window.addEventListener('resize', function () {
+      if (tagsQueued || window.innerWidth === lastTagWidth) return;
+      tagsQueued = true;
+      requestAnimationFrame(function () {
+        tagsQueued = false;
+        lastTagWidth = window.innerWidth;
+        balanceTagsAll();
+      });
+    });
+  }
+
   // ----- Back to Top Button -----
 
   var topBtn = document.createElement('button');
