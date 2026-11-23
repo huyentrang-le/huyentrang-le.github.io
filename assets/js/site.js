@@ -184,18 +184,75 @@
   // lines (so every line holds a similar share of tags), group the tags into
   // those lines, then let each line stretch back to the full width.
 
-  function tagLines(items) {
-    var lines = [];
-    var lastTop = null;
-    items.forEach(function (el) {
-      var top = Math.round(el.getBoundingClientRect().top);
-      if (lastTop === null || Math.abs(top - lastTop) > 2) {
-        lines.push([]);
-        lastTop = top;
+  // Split tags (kept in order) into lines that fit `full`. Cost, compared in
+  // order: number of lines, lines holding a single tag (when the line count
+  // allows sharing), then how unevenly the lines are filled.
+  function splitTags(widths, gap, full) {
+    var n = widths.length;
+    var fits = function (i, j) {          // tags i..j-1 on one line?
+      var w = gap * (j - i - 1);
+      for (var k = i; k < j; k++) w += widths[k];
+      return w <= full + 0.5 ? w : -1;
+    };
+    var better = function (a, b) {
+      for (var k = 0; k < a.length; k++) if (a[k] !== b[k]) return a[k] < b[k];
+      return false;
+    };
+    // best[j] = cheapest split of the first j tags: cost [lines, lone, slack²]
+    var best = [{ cost: [0, 0, 0], cut: [] }];
+    for (var j = 1; j <= n; j++) {
+      best[j] = null;
+      for (var i = j - 1; i >= 0; i--) {
+        var w = fits(i, j);
+        if (w < 0) break;
+        if (!best[i]) continue;
+        var slack = (full - w) / full;
+        var c = best[i].cost;
+        var cost = [c[0] + 1, c[1] + (j - i === 1 && n > 1 ? 1 : 0), c[2] + slack * slack];
+        if (!best[j] || better(cost, best[j].cost)) {
+          best[j] = { cost: cost, cut: best[i].cut.concat([j]) };
+        }
       }
-      lines[lines.length - 1].push(el);
-    });
-    return lines;
+      if (!best[j]) best[j] = { cost: [Infinity, 0, 0], cut: best[j - 1].cut.concat([j]) };
+    }
+    return { cut: best[n].cut, cost: best[n].cost };
+  }
+
+  // Short lists (up to 7 tags, e.g. narrow research cards) may also be
+  // reordered when that saves a line or a lone tag; ties keep the original order.
+  function orderTags(widths, gap, full) {
+    var n = widths.length;
+    var ident = widths.map(function (_, i) { return i; });
+    var pick = { order: ident, split: splitTags(widths, gap, full) };
+    if (n > 7) return pick;
+    var pickMoves = 0;
+    var perm = ident.slice();
+    var c = ident.map(function () { return 0; });
+    var tryPerm = function () {
+      var split = splitTags(perm.map(function (i) { return widths[i]; }), gap, full);
+      var a = split.cost, b = pick.split.cost;
+      var moves = perm.reduce(function (s, v, i) { return s + Math.abs(v - i); }, 0);
+      if (a[0] < b[0] || (a[0] === b[0] && (a[1] < b[1] ||
+          (a[1] === b[1] && moves < pickMoves)))) {
+        pick = { order: perm.slice(), split: split };
+        pickMoves = moves;
+      }
+    };
+    // Heap's algorithm: every permutation of the tag indices
+    var i = 0;
+    while (i < n) {
+      if (c[i] < i) {
+        var k = i % 2 ? c[i] : 0;
+        var t = perm[k]; perm[k] = perm[i]; perm[i] = t;
+        tryPerm();
+        c[i]++;
+        i = 0;
+      } else {
+        c[i] = 0;
+        i++;
+      }
+    }
+    return pick;
   }
 
   function balanceTags(box) {
@@ -210,19 +267,20 @@
     var full = box.clientWidth;
     if (!full || items.length < 2) return;
 
-    var count = tagLines(items).length;
-    if (count < 2) return;
+    box.classList.add('is-measuring');
+    var widths = items.map(function (el) { return Math.ceil(el.getBoundingClientRect().width); });
+    box.classList.remove('is-measuring');
+    var gap = parseFloat(getComputedStyle(box).columnGap) || 0;
 
-    var lo = full / count;
-    var hi = full;
-    while (hi - lo > 2) {
-      var mid = (lo + hi) / 2;
-      box.style.width = mid + 'px';
-      if (tagLines(items).length > count) lo = mid; else hi = mid;
-    }
-    box.style.width = hi + 'px';
-    var lines = tagLines(items);
-    box.style.width = '';
+    var pick = orderTags(widths, gap, full);
+    var ordered = pick.order.map(function (i) { return items[i]; });
+    var lines = [];
+    var start = 0;
+    pick.split.cut.forEach(function (end) {
+      lines.push(ordered.slice(start, end));
+      start = end;
+    });
+    if (lines.length < 2) return;
 
     lines.forEach(function (line) {
       var row = document.createElement('div');

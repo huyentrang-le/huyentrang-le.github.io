@@ -117,3 +117,10 @@
   display: flex;
   gap: inherit;
 }
+
+// Natural tag widths, read by site.js before it groups the lines
+// (no transition, or chips would still report their stretched width)
+.is-measuring > * {
+  flex: none !important;
+  transition: none !important;
+}
