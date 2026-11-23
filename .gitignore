@@ -6,3 +6,6 @@ vendor/
 .bundle/
 .worktrees/
 _config_pages.yml
+
+# Local Claude Code settings
+.claude/
