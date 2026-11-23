@@ -26,7 +26,7 @@
     privacy-preserving aggregated biomedical analysis on top of them.
 
 - title: "Selective Disclosure of Electronic Health Records"
-  keywords: [Blockchain, Zero-knowledge smart contracts, Selective disclosure, Electronic health records, Access control, Decentralised storage]
+  keywords: [Blockchain, ZK smart contracts, Selective disclosure, Health records, Access control, Decentralised storage]
   tech: [Sui, Move, Walrus]
   summary: "Traceable sharing of health records on the Sui blockchain with zero-knowledge contracts."
   description: >-
