@@ -54,7 +54,7 @@
     situations. LLMThings lets crews of language agents, coordinated by strategies such as
     MAPE-K or OODA, turn a natural-language intent into a workflow over devices exposed as
     MCP tools, executed in real time on a nursing-home testbed of ESP32 cameras for fall
-    prevention. Best Presentation Award at JDSE 2026.
+    prevention. 
 
 - title: "Location Privacy in Multimodal Transportation"
   keywords: [Geo-indistinguishability, GPS obfuscation, Location privacy, Trajectory segmentation, Multimodal transportation, Privacy–utility trade-off]
@@ -65,7 +65,7 @@
     trajectories (Geolife) by transport mode and obfuscates them with geo-indistinguishability
     mechanisms tuned to each mode, measuring the privacy–utility trade-off with Privkit:
     Velocity-Aware Geo-Ind kept distortion mostly below 50 m, against about 120 m for the
-    Planar Laplace baseline. M1 internship at the University of Porto.
+    Planar Laplace baseline. 
 
 - title: "Deep Reinforcement Learning for Edge-Cloud Systems"
   keywords: [Deep reinforcement learning, Multi-objective optimisation, Edge-cloud computing, Server selection, Network routing]
