@@ -9,6 +9,7 @@
   lat: 48.8510273
   lon: 2.2885712
   tone: blue
+  minimap: minimap-ece.html
 
 - name: Conservatoire national des arts et métiers (Cnam)
   lab: CEDRIC laboratory

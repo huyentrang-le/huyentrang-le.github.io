@@ -358,6 +358,13 @@ h2::after {
   .mm-north path { fill: var(--text-muted); }
   .mm-north text { font-size: 7.5px; font-weight: 700; fill: var(--text-muted); }
   .mm-boulevard { stroke: var(--mm-road); stroke-width: 11; fill: none; }
+  .mm-road path { stroke-linejoin: round; }
+  .mm-road-minor path { stroke-width: 4.5; }
+  .mm-boulevard-wide { stroke-width: 14; stroke-linejoin: round; }
+  .mm-rail { fill: none; stroke: var(--tone-blue); stroke-width: 2; stroke-dasharray: 5 4; opacity: 0.55; }
+  .mm-park-soft { opacity: 0.55; }
+  .mm-campus path { fill: color-mix(in srgb, var(--accent) 20%, var(--bg-card)); stroke: color-mix(in srgb, var(--accent) 45%, transparent); stroke-width: 1; stroke-linejoin: round; }
+  .mm-station { fill: var(--tone-blue); font-weight: 700; }
   .mm-park { fill: color-mix(in srgb, var(--tone-green) 32%, var(--bg-card)); }
   .mm-campus rect {
     fill: color-mix(in srgb, var(--accent) 20%, var(--bg-card));
@@ -370,6 +377,7 @@ h2::after {
   .mm-campus-label { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-weight: 700; fill: var(--accent); }
   .mm-campus-sub { font-size: 8.5px; font-weight: 700; letter-spacing: 0.14em; fill: color-mix(in srgb, var(--accent) 75%, var(--text-muted)); }
   .mm-street { font-size: 8.5px; font-weight: 600; fill: var(--text-muted); }
+  .mm-label, .mm-street { paint-order: stroke; stroke: color-mix(in srgb, var(--accent) 5%, var(--bg-secondary)); stroke-width: 3px; stroke-linejoin: round; }
 
   .mm-metro circle { fill: var(--tone-blue); stroke: var(--bg-card); stroke-width: 2; }
   .mm-metro text { font-size: 9.5px; font-weight: 700; fill: #fff; }
@@ -395,6 +403,7 @@ h2::after {
   }
 
   .mm-key { display: inline-block; flex-shrink: 0; }
+  .minimap-credit { flex-basis: 100%; font-size: 0.625rem; opacity: 0.8; }
   .mm-key-pin { width: 0.6rem; height: 0.6rem; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--accent-2); }
   .mm-key-metro {
     width: 0.95rem; height: 0.95rem; border-radius: 50%;
