@@ -424,3 +424,11 @@ h2::after {
 @media (prefers-reduced-motion: reduce) {
   .minimap .mm-pin-pulse { animation: none; }
 }
+
+// ----- Home: a slightly wider sidebar (profile, news, maps) -----
+@media (min-width: 1000px) {
+  .home-grid {
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: var(--space-10);
+  }
+}
