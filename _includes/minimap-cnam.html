@@ -1,0 +1,47 @@
+{% comment %}
+  Hand-drawn mini map of the Cnam Paris campus (north up, not to scale):
+  campus blocks between rue Saint-Martin and rue Vaucanson, the main
+  entrance at 292 rue Saint-Martin, Square Émile-Chautemps and the two
+  nearest metro stations. Colours come from the theme, so it follows dark mode.
+  Params: lat, lon (for the "open map" link)
+{% endcomment %}
+<a class="minimap" href="https://www.openstreetmap.org/?mlat={{ include.lat }}&amp;mlon={{ include.lon }}#map=17/{{ include.lat }}/{{ include.lon }}" target="_blank" rel="noopener" aria-label="Open the Cnam Paris campus on a map">
+<svg viewBox="0 0 300 178" role="img" aria-labelledby="minimap-cnam-title">
+<title id="minimap-cnam-title">Mini map of the Cnam Paris campus, entrance at 292 rue Saint-Martin</title>
+<rect class="mm-ground" width="300" height="178" rx="14"/>
+<g class="mm-road">
+<path d="M0 132H300"/>
+<path d="M57 0V178"/>
+<path d="M203 0V132"/>
+<path d="M57 30H300"/>
+<path d="M203 110H300"/>
+<path d="M283 30V110"/>
+</g>
+<path class="mm-boulevard" d="M27 0V178"/>
+<rect class="mm-park" x="33" y="48" width="18" height="48" rx="4"/>
+<g class="mm-campus">
+<rect x="62" y="35" width="136" height="92" rx="6"/>
+<rect x="208" y="35" width="70" height="70" rx="6"/>
+</g>
+<circle class="mm-dome" cx="158" cy="108" r="10"/>
+<text class="mm-label mm-campus-label" x="128" y="76" text-anchor="middle">Cnam</text>
+<text class="mm-label mm-campus-sub" x="128" y="90" text-anchor="middle">CEDRIC</text>
+<text class="mm-street" x="250" y="145" text-anchor="middle">Rue Réaumur</text>
+<text class="mm-street" transform="translate(69 176) rotate(-90)">St-Martin</text>
+<text class="mm-street" transform="translate(19 120) rotate(-90)">Sébastopol</text>
+<g class="mm-metro">
+<circle cx="225" cy="132" r="8"/><text x="225" y="135.5" text-anchor="middle">M</text>
+<circle cx="27" cy="132" r="8"/><text x="27" y="135.5" text-anchor="middle">M</text>
+</g>
+<g class="mm-north" transform="translate(289 15)"><path d="M0 -8L4.5 4L0 1.5L-4.5 4Z"/><text x="-7" y="3" text-anchor="end">N</text></g>
+<g class="mm-pin" transform="translate(62 70)">
+<circle class="mm-pin-pulse" r="11"/>
+<path d="M0 -16C-6.5 -16 -10 -11.5 -10 -6.5C-10 0 0 8 0 8C0 8 10 0 10 -6.5C10 -11.5 6.5 -16 0 -16Z"/>
+<circle class="mm-pin-dot" cy="-6.5" r="3.4"/>
+</g>
+</svg>
+<span class="minimap-legend">
+<span><span class="mm-key mm-key-pin"></span>Entrance, 292 rue Saint-Martin</span>
+<span><span class="mm-key mm-key-metro">M</span>Arts et Métiers · Réaumur–Sébastopol</span>
+</span>
+</a>

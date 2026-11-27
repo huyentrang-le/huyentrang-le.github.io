@@ -329,3 +329,89 @@ h2::after {
     filter: brightness(1.06);
   }
 }
+
+// ----- Mini campus map (home Contact card) -----
+.minimap {
+  display: block;
+  margin-top: var(--space-3);
+  color: inherit;
+  background-image: none !important;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: inset 0 0 0 1px var(--border-soft), var(--shadow-sm);
+    transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+  }
+
+  &:hover svg {
+    transform: translateY(-2px);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent), var(--shadow-md);
+  }
+
+  .mm-ground { fill: color-mix(in srgb, var(--accent) 5%, var(--bg-secondary)); }
+  --mm-road: var(--bg-card);
+
+  .mm-road path { stroke: var(--mm-road); stroke-width: 7; fill: none; stroke-linecap: round; }
+  .mm-north path { fill: var(--text-muted); }
+  .mm-north text { font-size: 7.5px; font-weight: 700; fill: var(--text-muted); }
+  .mm-boulevard { stroke: var(--mm-road); stroke-width: 11; fill: none; }
+  .mm-park { fill: color-mix(in srgb, var(--tone-green) 32%, var(--bg-card)); }
+  .mm-campus rect {
+    fill: color-mix(in srgb, var(--accent) 20%, var(--bg-card));
+    stroke: color-mix(in srgb, var(--accent) 45%, transparent);
+    stroke-width: 1;
+  }
+  .mm-dome { fill: color-mix(in srgb, var(--accent) 38%, var(--bg-card)); }
+
+  text { font-family: 'DM Sans', sans-serif; }
+  .mm-campus-label { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-weight: 700; fill: var(--accent); }
+  .mm-campus-sub { font-size: 8.5px; font-weight: 700; letter-spacing: 0.14em; fill: color-mix(in srgb, var(--accent) 75%, var(--text-muted)); }
+  .mm-street { font-size: 8.5px; font-weight: 600; fill: var(--text-muted); }
+
+  .mm-metro circle { fill: var(--tone-blue); stroke: var(--bg-card); stroke-width: 2; }
+  .mm-metro text { font-size: 9.5px; font-weight: 700; fill: #fff; }
+
+  .mm-pin path { fill: var(--accent-2); stroke: var(--bg-card); stroke-width: 1.5; }
+  .mm-pin-dot { fill: var(--bg-card); }
+  .mm-pin-pulse {
+    fill: var(--accent-2);
+    opacity: 0.25;
+    transform-origin: 0 0;
+    animation: mm-pulse 2.4s ease-out infinite;
+  }
+
+  .minimap-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-3);
+    margin-top: var(--space-2);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+
+    > span { display: inline-flex; align-items: center; gap: 0.35rem; }
+  }
+
+  .mm-key { display: inline-block; flex-shrink: 0; }
+  .mm-key-pin { width: 0.6rem; height: 0.6rem; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--accent-2); }
+  .mm-key-metro {
+    width: 0.95rem; height: 0.95rem; border-radius: 50%;
+    background: var(--tone-blue); color: #fff;
+    font-size: 0.55rem; font-weight: 700; line-height: 0.95rem; text-align: center;
+  }
+}
+
+[data-bs-theme="dark"] .minimap {
+  --mm-road: color-mix(in srgb, var(--text-muted) 30%, var(--bg-card));
+}
+
+@keyframes mm-pulse {
+  0% { transform: scale(0.6); opacity: 0.35; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .minimap .mm-pin-pulse { animation: none; }
+}

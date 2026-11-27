@@ -99,7 +99,7 @@
 <ul class="home-list compact">
 {% if site.email %}<li><a href="mailto:{{ site.email }}" class="home-list-title">{{ site.email }}</a></li>{% endif %}
 {% for loc in site.data.locations %}
-<li><span class="home-list-title">{{ loc.lab | default: loc.name }}</span><span class="home-list-meta">{{ loc.address | remove: ", France" }}</span></li>
+<li><span class="home-list-title">{{ loc.lab | default: loc.name }}</span><span class="home-list-meta">{{ loc.address | remove: ", France" }}</span>{% if loc.minimap %}{% include {{ loc.minimap }} lat=loc.lat lon=loc.lon %}{% endif %}</li>
 {% endfor %}
 </ul>
 </div>

@@ -1,5 +1,6 @@
 # Places shown with a map on the Contact page.
-# Each entry needs: name, address, lat, lon. Optional: lab, url, tone
+# Each entry needs: name, address, lat, lon. Optional: lab, url, tone,
+#   minimap (an include drawn for the home Contact card, e.g. minimap-cnam.html)
 # Coordinates from OpenStreetMap (Nominatim).
 - name: ECE Engineering School, Paris campus
   lab: LyRIDS laboratory
@@ -16,3 +17,4 @@
   lat: 48.866783
   lon: 2.3554167
   tone: rose
+  minimap: minimap-cnam.html
