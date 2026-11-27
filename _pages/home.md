@@ -4,12 +4,14 @@ layout: homelay
 permalink: /
 ---
 
+<section class="hero-panel" markdown="0">
+<p class="hero-eyebrow">Trustworthy networked systems</p>
 <h1 class="home-hero">{{ site.name }}</h1>
 <p class="home-hero-sub">{{ site.title }}, {{ site.institution }}</p>
-
-<div class="chip-container" markdown="0">
+<div class="chip-container">
 {% for area in site.data.research_areas %}{% for label in area.chips %}<a href="#area-{{ area.id }}" class="chip" title="{{ area.name }}">{{ label }}</a>{% endfor %}
 {% endfor %}</div>
+</section>
 
 My research is on **trustworthy networked systems**: networks whose timing can be proven, and data infrastructures whose privacy can be proven.
 On the networking side, I use deterministic network calculus to certify worst-case latency in Time-Sensitive Networks.

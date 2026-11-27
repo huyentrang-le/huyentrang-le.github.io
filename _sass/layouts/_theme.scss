@@ -1,0 +1,331 @@
+// =============================================================
+// Site theme — this site's own look on top of the template:
+// soft glow background, floating pill navbar, gradient hero panel,
+// rounder cards with layered shadows, teal-to-coral accents.
+// Loaded after the layouts so these rules win; dark mode adapts
+// through the tokens below.
+// =============================================================
+
+:root {
+  --accent-2: #e07a5f;                      // warm coral, paired with the teal accent
+  --grad-accent: linear-gradient(100deg, var(--accent) 0%, var(--accent-2) 100%);
+
+  --bg-primary: #f5f4ef;
+  --border-color: #e4e1d8;
+  --border-soft: color-mix(in srgb, var(--border-color) 75%, transparent);
+
+  --shadow-sm: 0 1px 2px rgba(22, 46, 43, 0.04), 0 2px 8px rgba(22, 46, 43, 0.04);
+  --shadow-md: 0 1px 2px rgba(22, 46, 43, 0.04), 0 12px 28px -10px rgba(22, 46, 43, 0.14);
+  --shadow-lg: 0 2px 4px rgba(22, 46, 43, 0.05), 0 24px 48px -14px rgba(22, 46, 43, 0.2);
+
+  --radius-xl: 1.375rem;
+  --radius-2xl: 1.75rem;
+}
+
+[data-bs-theme="dark"] {
+  --accent-2: #f2a488;
+  --bg-primary: #171816;
+  --bg-card: #212220;
+  --bg-secondary: #1d1e1c;
+  --border-color: #34352f;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 28px -10px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.3), 0 24px 48px -14px rgba(0, 0, 0, 0.65);
+}
+
+// ----- Background: two soft glows behind the top of every page -----
+body {
+  background-image:
+    radial-gradient(60rem 32rem at 8% -6rem, color-mix(in srgb, var(--accent) 11%, transparent), transparent 70%),
+    radial-gradient(48rem 28rem at 100% 4rem, color-mix(in srgb, var(--accent-2) 9%, transparent), transparent 70%);
+  background-repeat: no-repeat;
+}
+
+// ----- Headings: short gradient bar instead of a plain underline -----
+h1::after,
+h2::after {
+  width: 2.75rem;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--grad-accent);
+}
+
+// ----- Navbar: a floating glass pill -----
+.navbar.sticky-top {
+  background: transparent !important;
+  border-bottom: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: var(--space-3) var(--space-4) 0;
+  box-shadow: none;
+
+  > .container {
+    background-color: color-mix(in srgb, var(--bg-card) 74%, transparent);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-full);
+    padding: 0.375rem 0.5rem 0.375rem 0.875rem;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-base);
+  }
+
+  &.scrolled > .container {
+    box-shadow: var(--shadow-md);
+  }
+
+  .navbar-brand img {
+    opacity: 1;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 6px rgba(22, 46, 43, 0.18);
+  }
+
+  .nav-link {
+    border-radius: var(--radius-full);
+
+    &.active {
+      color: var(--accent) !important;
+      background-color: var(--accent-light);
+
+      &::after { display: none; }
+    }
+  }
+
+  .dark-mode-toggle,
+  .search-toggle {
+    border-color: transparent;
+    background-color: color-mix(in srgb, var(--text-muted) 8%, transparent);
+  }
+
+  @media (max-width: 767px) {
+    > .container {
+      border-radius: var(--radius-xl);
+      padding: 0.5rem 0.75rem;
+    }
+  }
+}
+
+// ----- Home hero: name, role and keywords on a gradient panel -----
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: var(--space-10) var(--space-10) var(--space-8);
+  margin-bottom: var(--space-8);
+  border-radius: var(--radius-2xl);
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);
+  background:
+    radial-gradient(28rem 18rem at 100% 0%, color-mix(in srgb, var(--accent-2) 16%, transparent), transparent 70%),
+    linear-gradient(140deg,
+      color-mix(in srgb, var(--accent) 13%, var(--bg-card)) 0%,
+      color-mix(in srgb, var(--accent) 4%, var(--bg-card)) 60%,
+      var(--bg-card) 100%);
+  box-shadow: var(--shadow-md);
+
+  // A faint network of nodes and links, drawn in the accent colour
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -1.5rem;
+    right: -1rem;
+    width: 20rem;
+    height: 13rem;
+    background-color: var(--accent);
+    opacity: 0.16;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 208'%3E%3Cg stroke='black' stroke-width='1.5' fill='none'%3E%3Cpath d='M40 150 110 96 196 128 268 56 300 120M110 96 150 30 268 56M196 128 236 184M150 30 196 128M40 150 82 196 196 128'/%3E%3C/g%3E%3Cg fill='black'%3E%3Ccircle cx='40' cy='150' r='6'/%3E%3Ccircle cx='110' cy='96' r='8'/%3E%3Ccircle cx='196' cy='128' r='10'/%3E%3Ccircle cx='268' cy='56' r='7'/%3E%3Ccircle cx='300' cy='120' r='5'/%3E%3Ccircle cx='150' cy='30' r='6'/%3E%3Ccircle cx='236' cy='184' r='6'/%3E%3Ccircle cx='82' cy='196' r='5'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 208'%3E%3Cg stroke='black' stroke-width='1.5' fill='none'%3E%3Cpath d='M40 150 110 96 196 128 268 56 300 120M110 96 150 30 268 56M196 128 236 184M150 30 196 128M40 150 82 196 196 128'/%3E%3C/g%3E%3Cg fill='black'%3E%3Ccircle cx='40' cy='150' r='6'/%3E%3Ccircle cx='110' cy='96' r='8'/%3E%3Ccircle cx='196' cy='128' r='10'/%3E%3Ccircle cx='268' cy='56' r='7'/%3E%3Ccircle cx='300' cy='120' r='5'/%3E%3Ccircle cx='150' cy='30' r='6'/%3E%3Ccircle cx='236' cy='184' r='6'/%3E%3Ccircle cx='82' cy='196' r='5'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin: 0 0 var(--space-3);
+    padding: 0.2rem 0.75rem 0.2rem 0.5rem;
+    border-radius: var(--radius-full);
+    background-color: color-mix(in srgb, var(--bg-card) 70%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    max-width: none;
+
+    &::before {
+      content: '';
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--grad-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+  }
+
+  .home-hero {
+    font-size: 3.25rem;
+    line-height: 1.05;
+    margin-bottom: var(--space-3);
+
+    @media (max-width: 768px) { font-size: 2.25rem; }
+  }
+
+  .home-hero-sub {
+    font-style: normal;
+    font-size: 1.0625rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+  }
+
+  .chip-container {
+    margin-bottom: 0;
+  }
+
+  .chip {
+    background-color: color-mix(in srgb, var(--bg-card) 72%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 28%, transparent);
+    backdrop-filter: blur(4px);
+
+    &:hover {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: var(--on-accent);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--space-8) var(--space-6) var(--space-6);
+    border-radius: var(--radius-xl);
+
+    &::before {
+      width: 11rem;
+      height: 7rem;
+      top: -1rem;
+      right: -2.5rem;
+      opacity: 0.1;
+    }
+  }
+}
+
+// ----- Cards: rounder, softer edges, layered shadows -----
+.section-card,
+.card-academic,
+.research-card,
+.project-card,
+.team-card,
+.contact-card,
+.map-card,
+.pi-card {
+  border-color: var(--border-soft);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.section-card {
+  box-shadow: var(--shadow-md);
+}
+
+.research-card,
+.project-card,
+.team-card {
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow), border-color var(--transition-base);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+}
+
+// Card icons: a tinted gradient tile
+.icon-badge {
+  width: 2.125rem;
+  height: 2.125rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(140deg,
+    color-mix(in srgb, var(--tone, var(--accent)) 22%, transparent),
+    color-mix(in srgb, var(--tone, var(--accent)) 7%, transparent));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tone, var(--accent)) 16%, transparent);
+}
+
+.view-more {
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+
+  &:hover {
+    background-color: var(--accent-light);
+  }
+}
+
+// ----- Profile card: gradient cover with the photo overlapping it -----
+.profile-card {
+  background: var(--bg-card);
+  border-color: var(--border-soft);
+  border-radius: var(--radius-2xl);
+  padding-top: var(--space-12);
+
+  &::before {
+    height: 6.5rem;
+    background:
+      radial-gradient(14rem 7rem at 85% 0%, color-mix(in srgb, var(--accent-2) 45%, transparent), transparent 70%),
+      linear-gradient(120deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, var(--accent-2)) 100%);
+    opacity: 0.9;
+  }
+
+  .profile-photo {
+    position: relative;
+    border: 4px solid var(--bg-card);
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent),
+      var(--shadow-md);
+  }
+
+  .profile-links {
+    border-top-color: var(--border-soft);
+  }
+}
+
+// ----- Page tabs (e.g. Research): soft pills -----
+.page-tabs a {
+  border-color: var(--border-soft);
+  box-shadow: var(--shadow-sm);
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+}
+
+// ----- Footer: gradient hairline and a lighter surface -----
+.site-footer {
+  background-color: color-mix(in srgb, var(--bg-secondary) 55%, transparent);
+  border-top: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent) 30%, var(--accent-2) 70%, transparent);
+    opacity: 0.55;
+  }
+
+  .footer-copyright {
+    border-top-color: var(--border-soft);
+  }
+}
+
+// ----- Back-to-top: gradient button -----
+.back-to-top {
+  border: 0;
+  color: #fff;
+  background: var(--grad-accent);
+  box-shadow: var(--shadow-md);
+
+  &:hover {
+    color: #fff;
+    filter: brightness(1.06);
+  }
+}
