@@ -7,6 +7,8 @@
 #   there is no image), image_position (crop focus for cover images, e.g. 20% 78%),
 #   image_link (where the banner links; default: the first project link),
 #   extra_images (more pictures shown beside the first one when the card is wide).
+# links: extra buttons, each with label and url (optional icon from _includes/icons.svg).
+# image may be a URL or a path under images/ (e.g. images/projects/logo.png).
 #   Card text: kicker (small label above the title), tags (list).
 # Home page: set featured: true, plus short (a shorter name) and summary (one line).
 
@@ -112,11 +114,17 @@
   year: 2022
   kicker: Competition, Top 10
   brand: FoodTech
+  image: images/projects/pencil-philosophy.png
+  image_link: https://www.facebook.com/Pencil.Philosophy
   tags: [Web application, Competition]
   repo: https://github.com/huyentrang-le/foodtech
+  links:
+    - label: Pencil Philosophy
+      url: https://www.facebook.com/Pencil.Philosophy
   description: >-
     Web application built for the Coders &amp; Philosophers web creativity
-    competition, where it placed in the Top 10.
+    competition organised by <a href="https://www.facebook.com/Pencil.Philosophy" target="_blank" rel="noopener">Pencil Philosophy</a>,
+    where it placed in the Top 10.
 
 # ---------- Events & community ----------
 
@@ -135,18 +143,27 @@
   description: >-
     Led the club of 70 members and organised more than 10 workshops and events on
     blockchain and crypto-finance. Represented <a href="https://fintech.hust.edu.vn/" target="_blank" rel="noopener">BK Fintech</a>
-    at the <a href="https://hust.edu.vn/vi/news/khoa-hoc-cong-nghe-dmst/bach-khoa-ha-noi-tien-phong-trong-cong-nghe-va-kinh-te-so-654873.html" target="_blank" rel="noopener">Korea–Vietnam Entrepreneurship Education Forum</a>.
+    at the <a href="https://hust.edu.vn/vi/news/khoa-hoc-cong-nghe-dmst/bach-khoa-ha-noi-tien-phong-trong-cong-nghe-va-kinh-te-so-654873.html" target="_blank" rel="noopener">Korea–Vietnam Entrepreneurship Education Forum</a>,
+    and appeared on national television (VTV2) as the student representative of the HUST Fintech Center.
+  links:
+    - label: VTV2 feature
+      url: https://www.facebook.com/lynnlihh0305/videos/1026734511827061/
+      icon: play
 
 - name: NestQuant 2023 programming competition
   category: event
   year: 2023
   kicker: Competition
   brand: NestQuant 2023
-  image: https://hust.edu.vn/uploads/sys/news/2023_11/20231109_122807010_ios.jpg
+  image: images/projects/nestquant-2023.jpg
   image_style: cover
+  image_position: center 62%
   tags: [Programming, Francophonie]
   role: Organiser, with the Agence universitaire de la Francophonie
   event: https://hust.edu.vn/vi/news/khoa-hoc-cong-nghe-dmst/bach-khoa-ha-noi-khuyen-khich-sinh-vien-su-dung-cong-nghe-moi-654914.html
+  links:
+    - label: BK Fintech post
+      url: https://www.facebook.com/FinTechHUST/posts/pfbid029HXbPRZwab58h4J9eFTgLtbFkRz2AeeRDqbCpQFVY1dv8oDcYEXCApaYbEV5vPvgl
   description: >-
     Programming competition co-organised with the <a href="https://www.auf.org/" target="_blank" rel="noopener">AUF</a>
     at <a href="https://hust.edu.vn/" target="_blank" rel="noopener">HUST</a>.
@@ -156,11 +173,17 @@
   year: 2023
   kicker: Hackathon
   brand: Chat'Innov 2023
-  image: https://hust.edu.vn/uploads/sys/news/2023_12/dsc_2994.jpg
+  image: images/projects/chatinnov-2023.jpg
   image_style: cover
+  image_position: center 55%
   tags: [ChatGPT, Francophonie]
   role: Organiser, with the Agence universitaire de la Francophonie
   news: https://hust.edu.vn/vi/news/tin-tuc-su-kien/sinh-vien-dai-hoc-bach-khoa-ha-noi-thang-ap-dao-cuoc-thi-chat-innov-2023-654946.html
+  links:
+    - label: BK Fintech post
+      url: https://www.facebook.com/FinTechHUST/posts/pfbid03792axPuoeNizf21qwLe1Bpubj4L7XMmrPJe1ySfbgXmvrCCSCgSiHjvCsgCa5AFml
+    - label: HUST post
+      url: https://www.facebook.com/dhbkhanoi/posts/pfbid0EEeFghJhXuvGmDpjZ76dJQFt2pnWyAamuiftiGMZXp2TMpurzz2RdvJCrTFmkmJEl
   description: >-
     The first hackathon on ChatGPT for French-speaking students in Vietnam. Together with
     NestQuant 2023, the competitions brought together more than 150 participants.
@@ -169,18 +192,34 @@
   category: event
   kicker: Student club
   brand: Francophone Club
-  tags: [Francophonie, Career events]
-  role: Head of the extracurricular activities committee
+  image: images/projects/cfi-language-workshop.jpg
+  image_style: cover
+  image_position: center 65%
+  tags: [Francophonie, Career events, Public speaking]
+  role: Head of the extracurricular activities committee; speaker and student representative
   facebook: https://www.facebook.com/clbphapbachkhoa/
+  links:
+    - label: Language workshop
+      url: https://www.facebook.com/clbphapbachkhoa/posts/pfbid0rnQovUiDBo7PJW3KvNQJby6NorzBpLrgja9LXBya1Th5ygXCybiQ699t1C3idWoWl
+    - label: Charity trip
+      url: https://www.facebook.com/clbphapbachkhoa/posts/pfbid0RJoGaP9WM5jjpk9sTaXg37wyX6tzrqmrSYWSEuv3U65UHBvqP5njxmSKe6cSpUDBl
   description: >-
-    Led the extracurricular activities of the French-speaking club of <a href="https://hust.edu.vn/" target="_blank" rel="noopener">HUST</a> and organised
-    francophone career orientation events.
+    Led the extracurricular activities of the French-speaking club of <a href="https://hust.edu.vn/" target="_blank" rel="noopener">HUST</a> (Club francophone de l'IPH) and organised
+    francophone career orientation events, the "Sinh viên không sợ ngoại ngữ" language workshop
+    with eHub and Hedspi Nichibu, and the "Ước mơ của em" charity trip with UFF, the French-speaking
+    club of Hanoi University of Civil Engineering. Invited as a speaker at the club's 10th anniversary
+    (October 2025) to share my four-year journey learning French, from first-year beginner to level B2.
 
 - name: StartupCity ambassador
   category: event
   kicker: Ambassador
   brand: StartupCity
   tags: [Entrepreneurship]
+  image_link: https://www.facebook.com/BKEntrepreneurshipCenter
   facebook: https://www.facebook.com/photo/?fbid=2640232599461776&set=a.371740252977700
+  links:
+    - label: BK Entrepreneurship Center
+      url: https://www.facebook.com/BKEntrepreneurshipCenter
   description: >-
-    Student ambassador for the StartupCity entrepreneurship programme.
+    Student ambassador for the StartupCity entrepreneurship programme of the
+    <a href="https://www.facebook.com/BKEntrepreneurshipCenter" target="_blank" rel="noopener">HUST Student Innovation and Entrepreneurship Center</a>.
