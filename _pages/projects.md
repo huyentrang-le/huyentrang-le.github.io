@@ -22,13 +22,23 @@ permalink: /projects/
 <div class="project-grid balanced-grid{% if cat.per_row == 2 %} max-2{% endif %}">
 {% for project in items %}
 <article class="project-card tone-{{ cat.tone }}">
+{% assign plate_url = project.website | default: project.repo | default: project.details | default: project.event | default: project.facebook %}
+{% assign plate_style = project.image_style | default: "logo" %}
+<a class="project-plate plate-{% if project.image %}{{ plate_style }}{% else %}empty{% endif %}"{% if plate_url %} href="{{ plate_url }}" target="_blank" rel="noopener"{% endif %} aria-label="{{ project.short | default: project.name | strip_html }}" tabindex="-1">
+{% if project.image %}<img src="{{ project.image }}" alt="" loading="lazy"{% if project.image_position %} style="object-position: {{ project.image_position }}"{% endif %}>{% if plate_style == "logo" and project.brand %}<span class="plate-brand">{{ project.brand }}</span>{% endif %}
+{% else %}<span class="plate-icon">{% include icon.html name=cat.icon %}</span><span class="plate-brand">{{ project.brand | default: project.short | default: project.name }}</span>{% endif %}
+</a>
+<div class="project-body">
+<div class="project-kicker-row"><p class="project-kicker">{{ project.kicker | default: cat.title }}</p>{% if project.year %}<span class="project-year">{% include icon.html name="calendar" %} {{ project.year }}</span>{% endif %}</div>
 <h3 class="project-title">{{ project.name }}</h3>
-{% if project.year or project.role %}<p class="project-meta">{% if project.year %}<span>{% include icon.html name="calendar" %} {{ project.year }}</span>{% endif %}{% if project.role %}<span>{% include icon.html name="user" %} {{ project.role }}</span>{% endif %}</p>{% endif %}
+{% if project.role %}<p class="project-meta"><span>{% include icon.html name="user" %} {{ project.role }}</span></p>{% endif %}
 <p class="project-desc">{{ project.description }}</p>
 {% if project.authors %}<p class="project-authors">{{ project.authors }}</p>{% endif %}
-{% if project.website or project.repo or project.docs or project.paper or project.program or project.slides or project.event or project.facebook %}
+{% if project.tags %}<div class="project-tags">{% for t in project.tags %}<span>{{ t }}</span>{% endfor %}</div>{% endif %}
+{% if project.website or project.repo or project.docs or project.paper or project.program or project.details or project.slides or project.event or project.facebook %}
 <div class="pub-actions">
 {% if project.website %}{% include link-btn.html url=project.website label="Website" icon="globe" %}{% endif %}
+{% if project.details %}{% include link-btn.html url=project.details label="Program details" icon="trophy" %}{% endif %}
 {% if project.repo %}{% include link-btn.html url=project.repo label="Code" icon="github" %}{% endif %}
 {% if project.docs %}{% include link-btn.html url=project.docs label="Docs" icon="book-open" %}{% endif %}
 {% if project.paper %}{% include link-btn.html url=project.paper label="Paper" icon="cv" %}{% endif %}
@@ -38,6 +48,7 @@ permalink: /projects/
 {% if project.facebook %}{% include link-btn.html url=project.facebook label="Facebook" icon="facebook" %}{% endif %}
 </div>
 {% endif %}
+</div>
 </article>
 {% endfor %}
 </div>

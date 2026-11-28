@@ -309,6 +309,18 @@
     });
   }
 
+  // ----- Cards: clicking a card outlines it -----
+  // Cards are not links, so give the clicked one focus (without scrolling);
+  // the CSS draws the accent outline on :focus until something else is clicked.
+  var cardSelector = '.home-card, .pub-card, .research-card, .project-card, .team-card, .learn-item';
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a, button, input, textarea, select')) return;
+    var card = e.target.closest(cardSelector);
+    if (!card) return;
+    if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '-1');
+    card.focus({ preventScroll: true });
+  });
+
   // ----- Back to Top Button -----
 
   var topBtn = document.createElement('button');

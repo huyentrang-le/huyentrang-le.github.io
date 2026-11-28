@@ -432,3 +432,260 @@ h2::after {
     gap: var(--space-10);
   }
 }
+
+// ----- Cards light up: accent outline on hover, click (focus) and keyboard focus -----
+// (page-level .section-card containers are left out; only the cards inside them light up)
+.home-card,
+.research-card,
+.project-card,
+.team-card,
+.learn-item {
+  transition: border-color var(--transition-fast), box-shadow var(--transition-slow), transform var(--transition-slow);
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    border-color: color-mix(in srgb, var(--tone, var(--accent)) 70%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--tone, var(--accent)) 70%, transparent), var(--shadow-lg);
+    outline: none;
+  }
+}
+
+// ----- Project cards: image banner on top, body below -----
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  border-top-width: 1px;
+  border-top-color: var(--border-soft);
+
+  .project-plate {
+    --plate-tint: color-mix(in srgb, var(--tone, var(--accent)) 12%, var(--bg-card));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    height: 8.5rem;
+    padding: var(--space-4) var(--space-6);
+    background: radial-gradient(120% 140% at 50% 0%, var(--bg-card) 0%, var(--plate-tint) 100%);
+    border-bottom: 1px solid var(--border-soft);
+    overflow: hidden;
+    color: var(--text-primary);
+    background-image: radial-gradient(120% 140% at 50% 0%, var(--bg-card) 0%, var(--plate-tint) 100%) !important;
+
+    img {
+      display: block;
+      transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+  }
+
+  .plate-logo img { max-height: 4.25rem; max-width: 40%; object-fit: contain; }
+  .plate-diagram { padding: var(--space-3); background: #fff !important; }
+  .plate-diagram img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .plate-cover { padding: 0; }
+  .plate-cover img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+
+  .plate-brand {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  .plate-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    flex-shrink: 0;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    color: var(--tone, var(--accent));
+    background: color-mix(in srgb, var(--tone, var(--accent)) 14%, var(--bg-card));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tone, var(--accent)) 22%, transparent);
+  }
+
+  &:hover .project-plate img,
+  &:focus-within .project-plate img { transform: scale(1.03); }
+
+  .project-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: var(--space-6);
+  }
+
+  .project-kicker-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+  }
+
+  .project-kicker {
+    margin: 0;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    max-width: none;
+  }
+
+  .project-year {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+
+    .icon { color: var(--tone, var(--accent)); }
+  }
+
+  .project-title {
+    font-size: 1.1875rem;
+    line-height: 1.3;
+    margin: 0 0 var(--space-3);
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: var(--space-1) 0 var(--space-4);
+
+    span {
+      padding: 0.2rem 0.7rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--tone, var(--accent));
+      background-color: color-mix(in srgb, var(--tone, var(--accent)) 11%, transparent);
+    }
+  }
+
+  .pub-actions {
+    margin-top: auto;
+  }
+}
+
+// ----- Publications: one card per paper, figure on the right -----
+.pub-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: center;
+  padding: var(--space-6) var(--space-8);
+  margin-bottom: var(--space-4);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-slow);
+
+  &:last-child { border-bottom: 1px solid var(--border-soft); }
+
+  &.has-figure { grid-template-columns: minmax(0, 1fr) minmax(0, 17rem); }
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    border-color: color-mix(in srgb, var(--accent) 70%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 70%, transparent), var(--shadow-lg);
+    outline: none;
+  }
+
+  .pub-kicker-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+  }
+
+  .pub-kicker {
+    margin: 0;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    max-width: none;
+  }
+
+  .year-badge { float: none; margin: 0; }
+
+  .pub-card-title {
+    font-size: 1.1875rem;
+    line-height: 1.35;
+    margin: 0 0 var(--space-2);
+    max-width: none;
+  }
+
+  .pub-card-authors {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+    max-width: none;
+
+    b { color: var(--text-primary); font-weight: 700; }
+  }
+
+  .pub-note {
+    display: inline-block;
+    margin: 0 0 var(--space-3);
+    padding: 0.15rem 0.65rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-2);
+    background-color: color-mix(in srgb, var(--accent-2) 12%, transparent);
+  }
+
+  .pub-actions { margin-top: var(--space-2); }
+
+  .pub-figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+    padding: var(--space-3);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);
+    background: #fff !important;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+  }
+
+  &:hover .pub-figure img { transform: scale(1.03); }
+
+  .pub-collapse { grid-column: 1 / -1; }
+
+  @media (max-width: 768px) {
+    padding: var(--space-6);
+
+    &.has-figure { grid-template-columns: minmax(0, 1fr); }
+    .pub-figure { order: -1; height: 9rem; }
+  }
+}
+
+// Publication cards replace the numbered list
+ol.bibliography {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}

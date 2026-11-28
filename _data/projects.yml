@@ -1,7 +1,11 @@
 # Projects, shown on the Projects page grouped by category (see
 # _data/project_categories.yml), in the order listed within each category.
 # Each entry needs: name, category, description
-# Optional: year, role, authors, website, repo, docs, paper, program, slides, event, facebook
+# Optional: year, role, authors, website, repo, docs, paper, program, details, slides, event, facebook
+# Card banner: image (URL of a logo or picture), image_style (logo, cover or diagram;
+#   default logo), brand (wordmark shown next to a logo, or on the icon banner when
+#   there is no image), image_position (crop focus for cover images, e.g. 20% 78%).
+#   Card text: kicker (small label above the title), tags (list).
 # Home page: set featured: true, plus short (a shorter name) and summary (one line).
 
 - name: Zero-knowledge smart contracts for healthcare SLAs (Shaker Genopole)
@@ -10,8 +14,13 @@
   summary: Zero-knowledge smart contracts for traceable health records on Sui.
   category: hackathon
   year: 2026
+  kicker: Challenge winner
+  image: https://shaker-genopole.github.io/deployment/logo.svg
+  brand: Shaker Genopole
+  tags: [Zero-knowledge proofs, Smart contracts, Sui, Health records]
   authors: H.-T. Le, H.-H. Vuong; supervised by A. Imeri and N. Agoulmine
-  website: https://genopole.agorize.com/web/en/challenges/618/teams/2643/participation
+  website: https://shaker-genopole.github.io/deployment/
+  details: https://genopole.agorize.com/web/en/challenges/618/teams/2643/participation
   slides: https://docs.google.com/presentation/d/17n0wptI4n4wjyPATJ44HPGJ8dE6MdHPh/edit?usp=sharing
   description: >-
     Winning project of the <a href="https://genopole.agorize.com/web/en/challenges/618/teams/2643/participation" target="_blank" rel="noopener">Shaker Genopole Challenge</a>,
@@ -24,6 +33,11 @@
 - name: "HOPPERS: LLM-based intent orchestration for medical IoT (D4Gen Hackathon 2026)"
   category: hackathon
   year: 2026
+  kicker: Hackathon project
+  image: https://www.genopole.fr/content/uploads/2023/08/Plan-de-travail-1.png
+  image_style: cover
+  image_position: 20% 78%
+  tags: [LLM agents, MCP, Medical IoT, SDN]
   authors: H.-T. Le; supervised by A. Imeri, N. Agoulmine and M. Hamidi
   website: https://llm-intent-orchestration.vercel.app
   repo: https://github.com/D4GenHackathon/llm-intent-orchestration
@@ -47,6 +61,10 @@
   summary: Privacy-preserving harassment reporting with zero-knowledge proofs.
   category: hackathon
   year: 2026
+  kicker: Hackathon project
+  image: https://ttgenproject.github.io/safeproof-zkp/content/media/teaser.svg
+  image_style: diagram
+  tags: [Zero-knowledge proofs, Threshold proofs, Privacy]
   authors: >-
     Mar Toledano Moreno, Mar Becerra i Vilardaga, Xènia Fonoll González, Sílvia Borràs García,
     Leire Martínez de Treviño García, Andrea Gil Guimerà, Uxia Pérez Aguirre, Raquel Gomez Argente
@@ -69,6 +87,10 @@
   summary: Language agents orchestrating IoT systems; Best Presentation Award at JDSE 2026.
   category: research
   year: 2026
+  kicker: Research prototype
+  image: https://llmthings.github.io/demo/static/architecture/architecture.png
+  image_style: diagram
+  tags: [Language agents, IoT orchestration, MAPE-K]
   authors: A. Sadoudi, H.-T. Le, M. Hamidi
   website: https://llmthings.github.io/demo/
   slides: https://jdse2026.github.io/slides/Oral_pres/13_SADOUDI_LLMThings.pdf
@@ -82,6 +104,9 @@
 - name: "FoodTech: web application (Coders & Philosophers 2021–2022)"
   category: hackathon
   year: 2022
+  kicker: Competition, Top 10
+  brand: FoodTech
+  tags: [Web application, Competition]
   repo: https://github.com/huyentrang-le/foodtech
   description: >-
     Web application built for the Coders &amp; Philosophers web creativity
@@ -95,6 +120,9 @@
   summary: President; more than 10 workshops on blockchain and crypto-finance.
   category: event
   role: President
+  kicker: Student club
+  brand: BK Fintech
+  tags: [Blockchain, Crypto-finance, Leadership]
   website: https://fintech.hust.edu.vn/get-involved/club
   description: >-
     Led the club of 70 members and organised more than 10 workshops and events on
@@ -104,6 +132,9 @@
 - name: NestQuant 2023 programming competition
   category: event
   year: 2023
+  kicker: Competition
+  brand: NestQuant 2023
+  tags: [Programming, Francophonie]
   role: Organiser, with the Agence universitaire de la Francophonie
   event: https://hust.edu.vn/vi/news/khoa-hoc-cong-nghe-dmst/bach-khoa-ha-noi-khuyen-khich-sinh-vien-su-dung-cong-nghe-moi-654914.html
   description: >-
@@ -113,6 +144,9 @@
 - name: "Chat'Innov AUF 2023: hackathon for French-speaking students"
   category: event
   year: 2023
+  kicker: Hackathon
+  brand: Chat'Innov 2023
+  tags: [ChatGPT, Francophonie]
   role: Organiser, with the Agence universitaire de la Francophonie
   event: https://hust.edu.vn/en/news/news/the-1st-hackathon-competition-for-french-speaking-students-in-vietnam-on-chat-gpt-653901.html
   description: >-
@@ -121,6 +155,9 @@
 
 - name: HUST Francophone Club
   category: event
+  kicker: Student club
+  brand: Francophone Club
+  tags: [Francophonie, Career events]
   role: Head of the extracurricular activities committee
   facebook: https://www.facebook.com/clbphapbachkhoa/
   description: >-
@@ -129,6 +166,9 @@
 
 - name: StartupCity ambassador
   category: event
+  kicker: Ambassador
+  brand: StartupCity
+  tags: [Entrepreneurship]
   facebook: https://www.facebook.com/photo/?fbid=2640232599461776&set=a.371740252977700
   description: >-
     Student ambassador for the StartupCity entrepreneurship programme.
