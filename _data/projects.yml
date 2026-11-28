@@ -1,7 +1,7 @@
 # Projects, shown on the Projects page grouped by category (see
 # _data/project_categories.yml), in the order listed within each category.
 # Each entry needs: name, category, description
-# Optional: year, role, authors, website, repo, docs, paper, program, details, slides, event, facebook
+# Optional: year, role, authors, website, repo, docs, paper, program, details, slides, event, news, facebook
 # Card banner: image (URL of a logo or picture), image_style (logo, cover or diagram;
 #   default logo), brand (wordmark shown next to a logo, or on the icon banner when
 #   there is no image), image_position (crop focus for cover images, e.g. 20% 78%).
@@ -122,6 +122,8 @@
   role: President
   kicker: Student club
   brand: BK Fintech
+  image: https://hust.edu.vn/uploads/sys/news/2023_09/image-20230928222207-1.jpeg
+  image_style: cover
   tags: [Blockchain, Crypto-finance, Leadership]
   website: https://fintech.hust.edu.vn/get-involved/club
   description: >-
@@ -134,6 +136,8 @@
   year: 2023
   kicker: Competition
   brand: NestQuant 2023
+  image: https://hust.edu.vn/uploads/sys/news/2023_11/20231109_122807010_ios.jpg
+  image_style: cover
   tags: [Programming, Francophonie]
   role: Organiser, with the Agence universitaire de la Francophonie
   event: https://hust.edu.vn/vi/news/khoa-hoc-cong-nghe-dmst/bach-khoa-ha-noi-khuyen-khich-sinh-vien-su-dung-cong-nghe-moi-654914.html
@@ -146,9 +150,11 @@
   year: 2023
   kicker: Hackathon
   brand: Chat'Innov 2023
+  image: https://hust.edu.vn/uploads/sys/news/2023_12/dsc_2994.jpg
+  image_style: cover
   tags: [ChatGPT, Francophonie]
   role: Organiser, with the Agence universitaire de la Francophonie
-  event: https://hust.edu.vn/en/news/news/the-1st-hackathon-competition-for-french-speaking-students-in-vietnam-on-chat-gpt-653901.html
+  news: https://hust.edu.vn/vi/news/tin-tuc-su-kien/sinh-vien-dai-hoc-bach-khoa-ha-noi-thang-ap-dao-cuoc-thi-chat-innov-2023-654946.html
   description: >-
     The first hackathon on ChatGPT for French-speaking students in Vietnam. Together with
     NestQuant 2023, the competitions brought together more than 150 participants.
