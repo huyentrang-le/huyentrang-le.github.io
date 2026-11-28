@@ -22,7 +22,7 @@ permalink: /projects/
 <div class="project-grid balanced-grid{% if cat.per_row == 2 %} max-2{% endif %}">
 {% for project in items %}
 <article class="project-card tone-{{ cat.tone }}">
-{% assign plate_url = project.website | default: project.repo | default: project.details | default: project.event | default: project.news | default: project.facebook %}
+{% assign plate_url = project.image_link | default: project.website | default: project.repo | default: project.details | default: project.event | default: project.news | default: project.facebook %}
 {% assign plate_style = project.image_style | default: "logo" %}
 <a class="project-plate plate-{% if project.image %}{{ plate_style }}{% else %}empty{% endif %}"{% if plate_url %} href="{{ plate_url }}" target="_blank" rel="noopener"{% endif %} aria-label="{{ project.short | default: project.name | strip_html }}" tabindex="-1">
 {% if project.image %}<img src="{{ project.image }}" alt="" loading="lazy"{% if project.image_position %} style="object-position: {{ project.image_position }}"{% endif %}>{% if plate_style == "logo" and project.brand %}<span class="plate-brand">{{ project.brand }}</span>{% endif %}

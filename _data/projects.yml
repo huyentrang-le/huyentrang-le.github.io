@@ -4,7 +4,8 @@
 # Optional: year, role, authors, website, repo, docs, paper, program, details, slides, event, news, facebook
 # Card banner: image (URL of a logo or picture), image_style (logo, cover or diagram;
 #   default logo), brand (wordmark shown next to a logo, or on the icon banner when
-#   there is no image), image_position (crop focus for cover images, e.g. 20% 78%).
+#   there is no image), image_position (crop focus for cover images, e.g. 20% 78%),
+#   image_link (where the banner links; default: the first project link).
 #   Card text: kicker (small label above the title), tags (list).
 # Home page: set featured: true, plus short (a shorter name) and summary (one line).
 
@@ -62,8 +63,10 @@
   category: hackathon
   year: 2026
   kicker: Hackathon project
-  image: https://ttgenproject.github.io/safeproof-zkp/content/media/teaser.svg
-  image_style: diagram
+  image: https://womencourage.acm.org/2026/wp-content/uploads/2026/03/bannerV1-1-scaled.png
+  image_style: cover
+  image_position: center 30%
+  image_link: https://womencourage.acm.org/2026/
   tags: [Zero-knowledge proofs, Threshold proofs, Privacy]
   authors: >-
     Mar Toledano Moreno, Mar Becerra i Vilardaga, Xènia Fonoll González, Sílvia Borràs García,
