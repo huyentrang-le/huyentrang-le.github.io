@@ -5,7 +5,8 @@
 # Card banner: image (URL of a logo or picture), image_style (logo, cover or diagram;
 #   default logo), brand (wordmark shown next to a logo, or on the icon banner when
 #   there is no image), image_position (crop focus for cover images, e.g. 20% 78%),
-#   image_link (where the banner links; default: the first project link).
+#   image_link (where the banner links; default: the first project link),
+#   extra_images (more pictures shown beside the first one when the card is wide).
 #   Card text: kicker (small label above the title), tags (list).
 # Home page: set featured: true, plus short (a shorter name) and summary (one line).
 
@@ -93,6 +94,8 @@
   kicker: Research prototype
   image: https://llmthings.github.io/demo/static/architecture/architecture.png
   image_style: diagram
+  extra_images:
+    - https://llmthings.github.io/demo/static/architecture/nursing-home-motivating-scenario.png
   tags: [Language agents, IoT orchestration, MAPE-K]
   authors: A. Sadoudi, H.-T. Le, M. Hamidi
   website: https://llmthings.github.io/demo/

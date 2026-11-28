@@ -25,7 +25,7 @@ permalink: /projects/
 {% assign plate_url = project.image_link | default: project.website | default: project.repo | default: project.details | default: project.event | default: project.news | default: project.facebook %}
 {% assign plate_style = project.image_style | default: "logo" %}
 <a class="project-plate plate-{% if project.image %}{{ plate_style }}{% else %}empty{% endif %}"{% if plate_url %} href="{{ plate_url }}" target="_blank" rel="noopener"{% endif %} aria-label="{{ project.short | default: project.name | strip_html }}" tabindex="-1">
-{% if project.image %}<img src="{{ project.image }}" alt="" loading="lazy"{% if project.image_position %} style="object-position: {{ project.image_position }}"{% endif %}>{% if plate_style == "logo" and project.brand %}<span class="plate-brand">{{ project.brand }}</span>{% endif %}
+{% if project.image %}<img src="{{ project.image }}" alt="" loading="lazy"{% if project.image_position %} style="object-position: {{ project.image_position }}"{% endif %}>{% for extra in project.extra_images %}<img class="plate-extra" src="{{ extra }}" alt="" loading="lazy">{% endfor %}{% if plate_style == "logo" and project.brand %}<span class="plate-brand">{{ project.brand }}</span>{% endif %}
 {% else %}<span class="plate-icon">{% include icon.html name=cat.icon %}</span><span class="plate-brand">{{ project.brand | default: project.short | default: project.name }}</span>{% endif %}
 </a>
 <div class="project-body">

@@ -688,3 +688,17 @@ ol.bibliography {
   padding-left: 0;
   margin: 0;
 }
+
+// Wide project cards (alone on a row): taller banner, extra images side by side
+.project-card { container-type: inline-size; }
+.project-card .project-plate .plate-extra { display: none; }
+
+@container (min-width: 640px) {
+  .project-card .project-plate { height: 11rem; }
+  .project-card .project-plate .plate-extra { display: block; }
+  .project-card .project-plate:has(.plate-extra) {
+    gap: var(--space-6);
+
+    img { max-width: calc(50% - var(--space-3)); max-height: 100%; object-fit: contain; }
+  }
+}
