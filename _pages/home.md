@@ -21,7 +21,7 @@ I am a PhD candidate at [Cnam](https://www.cnam.fr/) and [ECE Engineering School
 My thesis uses deterministic [network calculus](https://en.wikipedia.org/wiki/Network_calculus) to keep worst-case latency guarantees certified while [Time-Sensitive Networks](https://1.ieee802.org/tsn/) are reconfigured at runtime.
 
 Before my PhD, I completed an M2 in Computer Networks at [Université d'Évry Paris-Saclay](https://www.univ-evry.fr/) and an engineering degree in Computer Science at [HUST](https://hust.edu.vn/), Hanoi.
-I have worked on blockchain and zero-knowledge proofs for health and genomic data at [IBISC](https://www.ibisc.univ-evry.fr/), differential privacy for location data at the [Universidade do Porto](https://www.up.pt/feup/en/) (M1 internship), and deep reinforcement learning for edge-cloud systems at the [BKCS lab](https://bkcs.hust.edu.vn/).
+I have worked on blockchain and zero-knowledge proofs for health and genomic data at [IBISC](https://www.ibisc.univ-evry.fr/), differential privacy for location data at the [Universidade do Porto](https://www.up.pt/feup/en/) (master's internship), and deep reinforcement learning for edge-cloud systems at the [BKCS lab](https://bkcs.hust.edu.vn/).
 
 <div class="section-card home-card" markdown="0">
 {% include card-head.html title="Research areas" icon="flask" tone="teal" url="/research/#topics" %}

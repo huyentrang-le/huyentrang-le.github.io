@@ -28,7 +28,7 @@
   keywords: [Geo-indistinguishability, GPS obfuscation, Location privacy-preserving mechanisms, Multimodal transportation, Privacy–utility trade-off]
   method: >-
     Location-based services collect GPS traces from which homes, workplaces and transport
-    modes can be inferred. During my M1 internship at the University of Porto, I built a
+    modes can be inferred. During my master's internship at the University of Porto, I built a
     context-aware pipeline
     that first splits real-world trajectories by transport mode, then obfuscates each GPS
     point with calibrated noise using four geo-indistinguishability mechanisms (Planar
